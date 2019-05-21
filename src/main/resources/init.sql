@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS schedules;
+DROP TABLE IF EXISTS tasks;
+
+CREATE TABLE users(
+userId SERIAL PRIMARY KEY,
+email VARCHAR(40) NOT NULL,
+name VARCHAR(40) NOT NULL,
+password TEXT NOT NULL
+);
+
+CREATE TABLE schedules(
+scheduleId SERIAL PRIMARY KEY,
+days INT,
+title TEXT,
+userId FOREIGN KEY REFERENCES users(userId)
+);
+
+
+CREATE TABLE tasks(
+taskId SERIAL PRIMARY KEY,
+title TEXT,
+content TEXT
+);
