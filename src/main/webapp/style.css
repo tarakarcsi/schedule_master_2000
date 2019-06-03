@@ -1,0 +1,12 @@
+.error {
+    color: red;
+    text-align:center;
+}
+
+.info {
+    color: blue;
+}
+
+.hidden {
+    display: none;
+}

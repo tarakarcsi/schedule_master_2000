@@ -1,6 +1,6 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.dto.MessageDto;
+//import com.codecool.web.dto.MessageDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletContext;
@@ -20,9 +20,9 @@ abstract class AbstractServlet extends HttpServlet {
         return dataSource.getConnection();
     }
 
-    void sendMessage(HttpServletResponse resp, int status, String message) throws IOException {
-        sendMessage(resp, status, new MessageDto(message));
-    }
+//    void sendMessage(HttpServletResponse resp, int status, String message) throws IOException {
+//        sendMessage(resp, status, new MessageDto(message));
+//    }
 
     void sendMessage(HttpServletResponse resp, int status, Object object) throws IOException {
         resp.setStatus(status);
