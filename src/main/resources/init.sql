@@ -50,8 +50,8 @@ INSERT INTO schedules(days, title, isPublished, userId) VALUES(3, 'edzésterv', 
 INSERT INTO schedules(days, title, isPublished, userId) VALUES(5, 'feladatok', false, 2);
 INSERT INTO schedules(days, title, isPublished, userId) VALUES(7, 'programok', false, 3);
 
-INSERT INTO tasks(title, scheduleId) VALUES('kar', 1);
-INSERT INTO tasks(title, scheduleId) VALUES('láb', 1);
+INSERT INTO tasks(title, scheduleId) VALUES('bevásárlás', 1);
+INSERT INTO tasks(title, scheduleId) VALUES('edzés', 1);
 INSERT INTO tasks(title, scheduleId) VALUES('teregetés', 2);
 INSERT INTO tasks(title, scheduleId) VALUES('főzés', 2);
 INSERT INTO tasks(title, scheduleId) VALUES('buli', 3);
@@ -65,6 +65,8 @@ INSERT INTO slots(hour, dayId, taskId) VALUES(4, 1, 1);
 INSERT INTO slots(hour, dayId, taskId) VALUES(14, 2, 2);
 INSERT INTO slots(hour, dayId, taskId) VALUES(20, 3, 3);
 INSERT INTO slots(hour, dayId, taskId) VALUES(12, 4, 4);
+
+
 
 
 
