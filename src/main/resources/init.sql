@@ -1,4 +1,4 @@
-drop TABLE IF EXISTS users cascade;
+/*drop TABLE IF EXISTS users cascade;
 drop TABLE IF EXISTS schedules cascade;
 drop TABLE IF EXISTS tasks cascade;
 drop TABLE IF EXISTS slots cascade;
@@ -44,7 +44,7 @@ constraint hours_between_bounds check(hour >= 1 and hour <= 24)
 insert into users(email, name, password) values('karcsi@karcsi', 'karcsi', 'karcsi');
 insert into users(email, name, password) values('denes@denes', 'denes', 'denes');
 insert into users(email, name, password) values('lali@lali', 'lali', 'lali');
-insert into users(email, name, password) values('lakatos@denerisz', 'Lakatos Denerisz', 'denerisz69');
+insert into users(email, name, password) values('lakatos@denerisz', 'Lakatos Denerisz', 'denerisz69');*/
 
 
 --insert into schedules(days, title, isPublished, userId) values(3, 'edzésterv', false, 1);

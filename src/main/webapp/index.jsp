@@ -7,22 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <c:url value="/style.css" var="styleUrl"/>
     <c:url value="/index.js" var="indexScriptUrl"/>
-    <c:url value="/login.js" var="loginScriptUrl"/>
+    <c:url value="/loginSignup.js" var="loginScriptUrl"/>
     <c:url value="/logout.js" var="logoutScriptUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="${indexScriptUrl}"></script>
     <script src="${loginScriptUrl}"></script>
     <script src="${logoutScriptUrl}"></script>
     <title>Schedule-Master-9000</title>
 </head>
 <body>
-<div id="login-content" class="content">
-    <h1>Login</h1>
-    <form id="login-form" onsubmit="return false;">
-        <input type="text" name="email">
-        <input type="password" name="password">
-        <button id="login-button">Login</button>
-    </form>
+
+<%--LOGIN-SIGN IN--%>
+
+<div class="container">
+    <div class="login">
+        <div class="row">
+            <div class="col-sm-12 col-md">
+                <div class="login-left">
+                    <span>I have account</span>
+                    <h2>Log in !</h2>
+                    <form action="">
+                        <input type="email" name="" />
+                        <label for="email">E-mail</label>
+                        <input type="password" name="" placeholder="" />
+                        <label for="email">password</label>
+                        <input type="submit" value="Log in" />
+                        <input type="checkbox" name="" id="check1" />
+                        <label class="check" for="check1">Remember me </label>
+                        <span><a href="#">Forgot Password?</a></span>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <div class="login-right">
+                    <span>Not a member</span>
+                    <h2>Sing up !</h2>
+                    <form action="">
+                        <input type="text" name="name" placeholder="" />
+                        <label for="email">Full name</label>
+                        <input type="email" name="" placeholder="" />
+                        <label for="email">E-mail</label>
+                        <input type="password" name="" placeholder="" />
+                        <label for="email">password</label>
+                        <input type="submit" value="Sign in" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <%--                ------------------------------------------------------------%>

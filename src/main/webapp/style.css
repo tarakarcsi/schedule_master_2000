@@ -10,3 +10,138 @@
 .hidden {
     display: none;
 }
+
+body {
+    background: linear-gradient(105deg, #FF8647 0%, #F96C4E 50%, #FF716F 100%);
+}
+
+
+.login {
+    background-color: #FFFFFF;
+    margin-top: 200px;
+}
+
+.login .login-left::before {
+    content: '';
+    border-left: 1px solid #DDD;
+    height: 340px;
+    position: absolute;
+    top: 25%;
+    left: 100%;
+}
+
+.login .login-left, .login-right {
+    padding: 50px;
+}
+
+
+.login .login-left, .login-right span {
+    color: #A5A5A5;
+}
+
+.login .login-left h2, .login-right h2 {
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #6A30F6;
+}
+
+
+.login .login-left form, .login-right form {
+    padding-top: 35px;
+
+}
+.login .login-left form input, .login-right form input {
+    width: 100%;
+    height: 51px;
+    text-indent: 13px;
+    border: 2px solid #EEEEEE;
+    position: relative;
+}
+
+.login .login-left form input[type="submit"], .login-right form input[type="submit"] {
+    background-color: blueviolet;
+    text-indent: 0px;
+    background-color: #6A30F6;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+.login .login-left form input[type="checkbox"] {
+    display: inline-block;
+    margin: 0;
+    width: auto;
+    height: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.login .login-left form .check {
+    position: relative;
+}
+
+.login .login-left form .check::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #FFF;
+    display: inline-block;
+    border: 3px solid #6A30F6;
+    position: relative;
+    top: 6px;
+    left: -5px;
+}
+
+.login .login-left form input[type="checkbox"]:checked + .check::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+    color: #6a30f6;
+    position: absolute;
+    left: -2px;
+    top: -9px;
+    font-size: 33px;
+}
+
+
+.login .login-left form span {
+    float: right;
+    color: #A5A5A5;
+}
+
+.login .login-left form span a {
+    color: #A5A5A5;
+}
+
+
+/* floating label */
+
+label[for="password"], label[for="email"] {
+    position: relative;
+    top: -38px;
+    left: 13px;
+    color: #A5A5A5
+}
+
+
+input:focus + label[for="password"], input:focus + label[for="email"] {
+    top: -57px;
+    font-size: 12px;
+    transition: all .3s ease-in-out;
+    position: relative;
+    padding: 5xp;
+}
+
+.has-value + label[for="email"], label[for="password"] {
+    position: relative;
+    top: -58px;
+    left: 13px;
+    font-size: 10px;
+    color: #A5A5A5
+}
+
+.login .login-left form input[type="submit"] {
+    margin-bottom: 30px;
+}

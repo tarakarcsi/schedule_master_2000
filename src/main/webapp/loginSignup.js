@@ -27,3 +27,14 @@ function onLoginButtonClicked() {
     xhr.open('POST', 'login');
     xhr.send(params);
 }
+
+$(function(){
+    $('input').on('focusout', function(){
+        if($(this).val().length > 0) {
+            $(this).addClass('has-value');
+        }
+        else {
+            $(this).removeClass('has-value');
+        }
+    });
+});
