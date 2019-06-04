@@ -53,7 +53,7 @@
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
                         <label for="email">password</label>
-                        <input type="submit" value="Sign in" />
+                        <input type="submit" value="Sign in" id = "register-button" />
                     </form>
                 </div>
             </div>

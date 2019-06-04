@@ -12,6 +12,8 @@ function onRegisterResponse(){
     //clearMessages(); 
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
+    }else {
+        onOtherResponse(registerContentDivEl, this);
     }
 }
 
@@ -42,6 +44,8 @@ function onRegisterButtonClicked() {
     const nameInputEl = registerDivEl.querySelector('input[name = "name"]');
     const passwordInputEl = registerDivEl.querySelector('input[name = "password"]');
 
+    debugger;
+
     const email = emailInputEl.value;
     const password = passwordInputEl.value;
     const name = nameInputEl.value;
@@ -53,6 +57,8 @@ function onRegisterButtonClicked() {
 
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onRegisterResponse);
+    xhr.addEventListener('error', onNetworkError);
+
     xhr.open('POST', 'register');
     xhr.send(params);
 

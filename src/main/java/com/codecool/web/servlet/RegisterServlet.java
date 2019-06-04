@@ -7,6 +7,7 @@ import com.codecool.web.service.Simple.SimpleRegisterService;
 import com.codecool.web.service.exception.ServiceException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.rowset.serial.SerialException;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+@WebServlet("/register")
 public class RegisterServlet extends AbstractServlet{
 
     @Override

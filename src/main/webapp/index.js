@@ -7,6 +7,7 @@ const INTERNAL_SERVER_ERROR = 500;
 let loginContentDivEl;
 let profileContentDivEl;
 let logoutContentDivEl;
+let registerContentDivEl;
 
 function newInfo(targetEl, message) {
     newMessage(targetEl, 'info', message);
@@ -93,7 +94,11 @@ function setUnauthorized() {
 }
 
 function onLoad() {
+    registerContentDivEl = document.getElementById('register');
 
+    const registerButtonEl = document.getElementById('register-button');
+    registerButtonEl.addEventListener('click', onRegisterButtonClicked);
+    
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);
