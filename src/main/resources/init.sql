@@ -1,7 +1,10 @@
-/*drop TABLE IF EXISTS users cascade;
+drop TABLE IF EXISTS users cascade;
 drop TABLE IF EXISTS schedules cascade;
 drop TABLE IF EXISTS tasks cascade;
 drop TABLE IF EXISTS slots cascade;
+drop TABLE IF EXISTS days cascade;
+
+
 
 create table users(
 userId serial primary key,
@@ -15,6 +18,7 @@ scheduleId serial primary key,
 days int,
 title text,
 isPublished boolean default false,
+userId int,
 foreign key (userId) references users(userId)
 );
 
@@ -28,44 +32,45 @@ content text
 CREATE TABLE days(
 dayId serial PRIMARY KEY,
 title text,
-FOREIGN KEY (scheduleId) REFERENCES schedules(scheduleId)
-
+schedule int,
+foreign key(schedule) REFERENCES schedules(scheduleId)
 );
 
 create table slots(
 slotId serial primary key,
 hour integer not null,
+dayId int,
+taskId int,
 foreign key (dayId) references days(dayId),
 foreign key (taskId)  references tasks(taskId),
-constraint hours_between_bounds check(hour >= 1 and hour <= 24)
+constraint hours_between_bounds check(hour >= 0 and hour <= 24)
 );
 
 
 insert into users(email, name, password) values('karcsi@karcsi', 'karcsi', 'karcsi');
 insert into users(email, name, password) values('denes@denes', 'denes', 'denes');
 insert into users(email, name, password) values('lali@lali', 'lali', 'lali');
-insert into users(email, name, password) values('lakatos@denerisz', 'Lakatos Denerisz', 'denerisz69');*/
+insert into users(email, name, password) values('lakatos@denerisz', 'Lakatos Denerisz', 'denerisz69');
 
 
---insert into schedules(days, title, isPublished, userId) values(3, 'edzésterv', false, 1);
---insert into schedules(days, title, isPublished, userId) values(5, 'feladatok', false, 2);
---insert into schedules(days, title, isPublished, userId) values(7, 'programok', false, 3);
+insert into schedules(days, title, isPublished, userId) values(3, 'edzésterv', false, 1);
+insert into schedules(days, title, isPublished, userId) values(5, 'feladatok', false, 2);
+insert into schedules(days, title, isPublished, userId) values(7, 'programok', false, 3);
 
---insert into tasks(title, scheduleId) values('bevásárlás', 1);
---insert into tasks(title, scheduleId) values('edzés', 1);
---insert into tasks(title, scheduleId) values('teregetés', 2);
---insert into tasks(title, scheduleId) values('főzés', 2);
---insert into tasks(title, scheduleId) values('buli', 3);
---insert into tasks(title, scheduleId) values('tanulás', 3);
---
---insert into days(title, scheduleId) values('hétfő', 1);
---insert into days(title, scheduleId) values('kedd', 2);
---insert into days(title, scheduleId) values('szerda', 3);
---
---insert into slots(hour, dayId, taskId) values(4, 1, 1);
---insert into slots(hour, dayId, taskId) values(14, 2, 2);
---insert into slots(hour, dayId, taskId) values(20, 3, 3);
---insert into slots(hour, dayId, taskId) values(12, 4, 4);
+insert into tasks(title, content) values('bevásárlás', 'asd');
+insert into tasks(title, content) values('edzés', 'sfsdf');
+insert into tasks(title, content) values('teregetés', 'dsaf');
+insert into tasks(title, content) values('főzés', 'dfsfdf');
+insert into tasks(title, content) values('buli', 'fgte');
+insert into tasks(title, content) values('tanulás', 'fethd');
+
+insert into days(title, schedule) values('hétfő', 1);
+insert into days(title, schedule) values('kedd', 2);
+insert into days(title, schedule) values('szerda', 3);
+
+insert into slots(hour, dayId, taskId) values(4, 1, 1);
+insert into slots(hour, dayId, taskId) values(14, 2, 2);
+insert into slots(hour, dayId, taskId) values(20, 3, 3);
 
 
 
