@@ -93,20 +93,7 @@ function setUnauthorized() {
 }
 
 function onLoad() {
-    loginContentDivEl = document.getElementById('login-content');
-    profileContentDivEl = document.getElementById('profile-content');
-    backToProfileContentDivEl = document.getElementById('back-to-profile-content');
-    logoutContentDivEl = document.getElementById('logout-content');
 
-    const loginButtonEl = document.getElementById('login-button');
-    loginButtonEl.addEventListener('click', onLoginButtonClicked);
-
-    const logoutButtonEl = document.getElementById('logout-button');
-    logoutButtonEl.addEventListener('click', onLogoutButtonClicked);
-
-    if (hasAuthorization()) {
-        onProfileLoad(getAuthorization());
-    }
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);

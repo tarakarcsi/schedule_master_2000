@@ -27,14 +27,14 @@
     <div class="login">
         <div class="row">
             <div class="col-sm-12 col-md">
-                <div class="login-left">
+                <div class="login-left" id = "login">
                     <span>I have account</span>
                     <h2>Log in !</h2>
                     <form action="">
-                        <input type="email" name="" />
+                        <input type="email" name="email" />
                         <label for="email">E-mail</label>
-                        <input type="password" name="" placeholder="" />
-                        <label for="email">password</label>
+                        <input type="password" name="password" placeholder="" />
+                        <label for="email">password</label> %--clicking on text, navigate in textbox (angol nyelvvel)--%
                         <input type="submit" value="Log in" />
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>
@@ -43,15 +43,15 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md">
-                <div class="login-right">
+                <div class="login-right" id = "register">
                     <span>Not a member</span>
                     <h2>Sing up !</h2>
                     <form action="">
                         <input type="text" name="name" placeholder="" />
                         <label for="email">Full name</label>
-                        <input type="email" name="" placeholder="" />
+                        <input type="email" name="email" placeholder="" />
                         <label for="email">E-mail</label>
-                        <input type="password" name="" placeholder="" />
+                        <input type="password" name="password" placeholder="" />
                         <label for="email">password</label>
                         <input type="submit" value="Sign in" />
                     </form>
