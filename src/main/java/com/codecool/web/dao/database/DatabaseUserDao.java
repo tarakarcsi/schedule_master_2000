@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class DatabaseUserDao extends AbstractDao implements UserDao {
 
@@ -27,6 +28,16 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
         return null;
     }
 
+    @Override
+    public User addNewUser(String name, String email, String password) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public List<User> getUserList() throws SQLException {
+        return null;
+    }
+
     private User fetchUser(ResultSet resultSet) throws SQLException {
         int id = resultSet.getInt("userId");
         String name = resultSet.getString("name");
@@ -34,5 +45,6 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
         String password = resultSet.getString("password");
         return new User(id, email, name, password);
     }
+
 
 }
