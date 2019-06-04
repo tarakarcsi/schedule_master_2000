@@ -2,10 +2,8 @@ package com.codecool.web.dao.database;
 
 import com.codecool.web.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseUserDao extends AbstractDao implements UserDao {
@@ -29,7 +27,7 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
     }
 
     @Override
-    public User addNewUser(User user) throws SQLException {
+    public void addNewUser(User user) throws SQLException {
         String sql = "INSERT INTO users(email, name, password) VALUES (?,?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, user.getEmail());
@@ -39,11 +37,20 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
         }catch (SQLException e){
             e.printStackTrace();
         }
+
     }
 
     @Override
     public List<User> getUserList() throws SQLException {
-        return null;
+        String sql = "SELECT * FROM users;";
+        List<User> users = new ArrayList<>();
+        try  (Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql)) {
+            while (resultSet.next()){
+                users.add(fetchUser(resultSet));
+            }
+        }
+        return users;
     }
 
     private User fetchUser(ResultSet resultSet) throws SQLException {
