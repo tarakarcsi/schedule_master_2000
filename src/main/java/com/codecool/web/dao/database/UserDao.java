@@ -8,6 +8,6 @@ import java.util.List;
 public interface UserDao {
 
     User findByEmail(String email) throws SQLException;
-    void addNewUser(String name, String email, String password) throws SQLException;
+    User addNewUser(String name, String email, String password) throws SQLException;
     List<User> getUserList() throws SQLException;
 }

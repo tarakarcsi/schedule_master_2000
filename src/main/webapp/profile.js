@@ -5,7 +5,7 @@ function showUserInfo(user){
 function loadUser() {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onUsersReceived);
-    xhr.open('GET', BASE_URL + '/users');
+    xhr.open('GET',  '/user');
     xhr.send();
 }
 

@@ -27,7 +27,7 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
     }
 
     @Override
-    public void addNewUser(String name, String email, String password) throws SQLException {
+    public User addNewUser(String name, String email, String password) throws SQLException {
         String sql = "INSERT INTO users(email, name, password) VALUES (?,?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, email);
@@ -37,6 +37,7 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
         }
 
 
+        return null;
     }
 
     @Override

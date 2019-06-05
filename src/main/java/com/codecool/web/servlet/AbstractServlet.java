@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-abstract class AbstractServlet extends HttpServlet {
+public abstract class AbstractServlet extends HttpServlet {
 
     private final ObjectMapper om = new ObjectMapper();
 
-    Connection getConnection(ServletContext sce) throws SQLException {
+    protected Connection getConnection(ServletContext sce) throws SQLException {
         DataSource dataSource = (DataSource) sce.getAttribute("dataSource");
         return dataSource.getConnection();
     }
@@ -25,12 +25,12 @@ abstract class AbstractServlet extends HttpServlet {
       sendMessage(resp, status, new MessageDto(message));
     }
 
-    void sendMessage(HttpServletResponse resp, int status, Object object) throws IOException {
+    protected void sendMessage(HttpServletResponse resp, int status, Object object) throws IOException {
         resp.setStatus(status);
         om.writeValue(resp.getOutputStream(), object);
     }
 
-    void handleSqlError(HttpServletResponse resp, SQLException ex) throws IOException {
+    protected void handleSqlError(HttpServletResponse resp, SQLException ex) throws IOException {
         sendMessage(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, ex.getMessage());
         ex.printStackTrace();
     }
