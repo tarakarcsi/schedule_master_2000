@@ -1,5 +1,6 @@
 .vscode
 .idea
+.project
 target
 *.iml
 *.swp
