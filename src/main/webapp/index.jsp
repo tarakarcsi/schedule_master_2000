@@ -34,7 +34,7 @@
                         <input type="email" name="email" />
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
-                        <label for="email">password</label> 
+                        <label for="email">password</label>
                         <input type="submit" value="Login" />
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>

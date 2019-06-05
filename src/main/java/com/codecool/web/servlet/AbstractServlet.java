@@ -34,4 +34,5 @@ abstract class AbstractServlet extends HttpServlet {
         sendMessage(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, ex.getMessage());
         ex.printStackTrace();
     }
+
 }
