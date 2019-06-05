@@ -15,6 +15,13 @@ public class User extends AbstractModel{
         this.password = password;
     }
 
+    public User(String email, String name, String password) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+    }
+
+
     public String getName() {
         return name;
     }

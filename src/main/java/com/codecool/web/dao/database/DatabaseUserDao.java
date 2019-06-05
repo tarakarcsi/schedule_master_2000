@@ -27,12 +27,12 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
     }
 
     @Override
-    public void addNewUser(User user) throws SQLException {
+    public void addNewUser(String name, String email, String password) throws SQLException {
         String sql = "INSERT INTO users(email, name, password) VALUES (?,?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, user.getEmail());
-            preparedStatement.setString(2, user.getName());
-            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, password);
             executeInsert(preparedStatement);
         }catch (SQLException e){
             e.printStackTrace();
