@@ -23,7 +23,7 @@
 
 <%--LOGIN-SIGN IN--%>
 
-<div class="container">
+<div class="container hidden">
     <div class="login">
         <div class="row">
             <div class="col-sm-12 col-md">
