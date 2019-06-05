@@ -13,7 +13,7 @@ public class DatabaseTaskDao extends AbstractDao implements TaskDao{
     }
 
     @Override
-    public void addNewTask(String title, String content) throws SQLException {
+    public void addNewTask(String title, String content) {
         String sql = "INSERT INTO tasks(title, content) VALUES (?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, title);
@@ -38,13 +38,31 @@ public class DatabaseTaskDao extends AbstractDao implements TaskDao{
     }
 
     @Override
-    public void removeTaskByTitle(String title) throws SQLException {
-        // To be implemented.
+    public void removeTask(int id)  {
+        String sql = "DELETE FROM tasks WHERE taskId = ?" +
+            "DELETE FROM tasks WHERE id =?;";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(2,id);
+            preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override
-    public void updateTask(Task task) throws SQLException {
-        // To be implemented.
+    public void updateTask(Task task) {
+        try (PreparedStatement preparedStatement =
+             connection.prepareStatement("UPDATE tasks SET title = ?, content = ?" +
+                 "WHERE title = '" + task.getTitle() + "'")) {
+            preparedStatement.setString(1, task.getTitle());
+            preparedStatement.setString(2, task.getContent());
+            executeInsert(preparedStatement);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private Task getTask(ResultSet resultSet) throws SQLException {

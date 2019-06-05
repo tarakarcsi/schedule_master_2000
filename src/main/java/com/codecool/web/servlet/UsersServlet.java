@@ -6,7 +6,7 @@ import com.codecool.web.dao.database.UserDao;
 import com.codecool.web.model.User;
 import com.codecool.web.service.UserService;
 import com.codecool.web.service.exception.ServiceException;
-import com.codecool.web.service.simple.SimpleUserService;
+import com.codecool.web.service.Simple.SimpleUserService;
 import com.codecool.web.servlet.AbstractServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
