@@ -60,6 +60,10 @@
         </div>
     </div>
 </div>
+<div id="profile-content" class="hidden content">
+</div>
+
+
 
 <%--                ------------------------------------------------------------%>
 <%--                    EZEKET ÁTIRJUK JO LESZ PÉLDÁNAK AZÉRT NEM TÖRÖLTEM    --%>
