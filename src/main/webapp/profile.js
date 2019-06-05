@@ -1,17 +1,19 @@
-function showUserInfo(user){
 
-}
+let usersButtonEl;
+function onProfileLoad(user) {
+    usersButtonEl = document.getElementById('users-button');
+    clearMessages();
 
-function loadUser() {
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', onUsersReceived);
-    xhr.open('GET',  '/user');
-    xhr.send();
-}
+    const userNameSpanEl = document.getElementById('user-name');
+    userNameSpanEl.textContent = user.name;
 
-function onUsersReceived() {
-    const text = this.responseText;
-    const user = JSON.parse(text);
-    const divEl = document.getElementById('profile-content');
-
+    if (user.admin) {
+        showContents(['menu-content']);
+        usersButtonEl.style.display = "inline";
+        onUsersButtonClicked();
+    } else {
+        showContents(['menu-content']);
+        usersButtonEl.style.display = "none";
+        onSchedulesButtonClicked();
+    }
 }

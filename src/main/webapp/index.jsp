@@ -30,7 +30,7 @@
                 <div class="login-left" id = "login">
                     <span>I have an account</span>
                     <h2>Login !</h2>
-                    <form action="">
+                    <form  onsubmit="startLogin(); return false;" action="">
                         <input type="email" name="email" />
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
@@ -61,6 +61,18 @@
     </div>
 </div>
 <div id="profile-content" class="hidden content">
+    <h1>User</h1><br>
+    <table id="user">
+        <thead>
+        <tr>
+            <th id='user-id-thead'>ID</th>
+            <th id='user-name-thead'>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody id="users-tbody">
+        </tbody>
+    </table>
 </div>
 
 
