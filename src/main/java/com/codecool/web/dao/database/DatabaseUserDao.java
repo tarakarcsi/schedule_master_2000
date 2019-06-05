@@ -34,9 +34,8 @@ public class DatabaseUserDao extends AbstractDao implements UserDao {
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, password);
             executeInsert(preparedStatement);
-        }catch (SQLException e){
-            e.printStackTrace();
         }
+
 
     }
 
