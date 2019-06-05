@@ -34,7 +34,7 @@
                         <input type="email" name="email" />
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
-                        <label for="email">password</label> %--clicking on text, navigate in textbox (angol nyelvvel)--%
+                        <label for="email">password</label> 
                         <input type="submit" value="Login" />
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>
@@ -45,7 +45,7 @@
             <div class="col-sm-12 col-md">
                 <div class="login-right" id = "register">
                     <span>Not a member</span>
-                    <h2>Signup</h2> up !</h2>
+                    <h2>Signup !</h2>
                     <form action="">
                         <input type="text" name="name" placeholder="" />
                         <label for="email">Full name</label>
