@@ -21,9 +21,9 @@
 </head>
 <body>
 
-<%--LOGIN-SIGN IN--%>
+LOGIN-SIGN IN
 
-<div class="container hidden">
+<div class="container">
     <div class="login">
         <div class="row">
             <div class="col-sm-12 col-md">
@@ -35,7 +35,7 @@
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
                         <label for="email">password</label>
-                        <input type="submit" value="Login" />
+                        <input type="submit" id = "login" value="Login" />
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>
                         <span><a href="#">Forgot Password?</a></span>
@@ -77,79 +77,79 @@
 
 
 
-<%--                ------------------------------------------------------------%>
-<%--                    EZEKET ÁTIRJUK JO LESZ PÉLDÁNAK AZÉRT NEM TÖRÖLTEM    --%>
-<%--                ------------------------------------------------------------%>
+                <!-- ----------------------------------------------------------
+                    EZEKET ÁTIRJUK JO LESZ PÉLDÁNAK AZÉRT NEM TÖRÖLTEM    
+                ---------------------------------------------------------- -->
 
 
-<%--<div id="profile-content" class="hidden content">--%>
-<%--    <h1>Profile</h1>--%>
-<%--    <p>Email: <span id="user-email"></span></p>--%>
-<%--    <p>Password: <span id="user-password"></span></p>--%>
-<%--    <h2>Links</h2>--%>
-<%--    <ul>--%>
-<%--        <li><a href="javascript:void(0);" onclick="onShopsClicked();">Shops</a></li>--%>
-<%--        <li><a href="javascript:void(0);" onclick="onCouponsClicked();">Coupons</a></li>--%>
-<%--    </ul>--%>
-<%--</div>--%>
-<%--<div id="shops-content" class="hidden content">--%>
-<%--    <h1>Shops</h1>--%>
-<%--    <table id="shops">--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <th>ID</th>--%>
-<%--            <th>Name</th>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--        <tbody>--%>
-<%--        </tbody>--%>
-<%--    </table>--%>
-<%--    <h2>Add new shop</h2>--%>
-<%--    <form id="shop-form" onsubmit="return false;">--%>
-<%--        <input type="text" name="name">--%>
-<%--        <button onclick="onShopAddClicked();">Add</button>--%>
-<%--    </form>--%>
-<%--</div>--%>
-<%--<div id="shop-content" class="hidden content">--%>
-<%--    <h1>Shop</h1>--%>
-<%--    <p>ID: <span id="shop-id"></span></p>--%>
-<%--    <p>Name: <span id="shop-name"></span></p>--%>
-<%--</div>--%>
-<%--<div id="coupons-content" class="hidden content">--%>
-<%--    <h1>Coupons</h1>--%>
-<%--    <table id="coupons">--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <th>ID</th>--%>
-<%--            <th>Name</th>--%>
-<%--            <th>Percentage (%)</th>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--        <tbody>--%>
-<%--        </tbody>--%>
-<%--    </table>--%>
-<%--    <h2>Add new coupon</h2>--%>
-<%--    <form id="coupon-form" onsubmit="return false;">--%>
-<%--        <input type="text" name="name">--%>
-<%--        <input type="range" min="0" max="100" name="percentage">--%>
-<%--        <button onclick="onCouponAddClicked();">Add</button>--%>
-<%--    </form>--%>
-<%--</div>--%>
-<%--<div id="coupon-content" class="hidden content">--%>
-<%--    <h1>Coupon</h1>--%>
-<%--    <p>ID: <span id="coupon-id"></span></p>--%>
-<%--    <p>Name: <span id="coupon-name"></span></p>--%>
-<%--    <p>Percentage: <span id="coupon-percentage"></span>%</p>--%>
-<%--    <p>Shops: <span id="coupon-shops"></span></p>--%>
-<%--    <h2>Add to shops</h2>--%>
-<%--    <form id="coupon-shops-form" onsubmit="return false">--%>
-<%--        <select name="shopIds" multiple>--%>
-<%--        </select>--%>
-<%--        <button onclick="onCouponShopsAddClicked();">Add</button>--%>
-<%--    </form>--%>
-<%--</div>--%>
-<%--<div id="logout-content" class="hidden content">--%>
-<%--    <button id="logout-button">Logout</button>--%>
-<%--</div>--%>
+<div id="profile-content" class="hidden content">
+    <h1>Profile</h1>
+    <p>Email: <span id="user-email"></span></p>
+    <p>Password: <span id="user-password"></span></p>
+    <h2>Links</h2>
+    <ul>
+        <li><a href="javascript:void(0);" onclick="onShopsClicked();">Shops</a></li>
+        <li><a href="javascript:void(0);" onclick="onCouponsClicked();">Coupons</a></li>
+    </ul>
+</div>
+<div id="shops-content" class="hidden content">
+    <h1>Shops</h1>
+    <table id="shops">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <h2>Add new shop</h2>
+    <form id="shop-form" onsubmit="return false;">
+        <input type="text" name="name">
+        <button onclick="onShopAddClicked();">Add</button>
+    </form>
+</div>
+<div id="shop-content" class="hidden content">
+    <h1>Shop</h1>
+    <p>ID: <span id="shop-id"></span></p>
+    <p>Name: <span id="shop-name"></span></p>
+</div>
+<div id="coupons-content" class="hidden content">
+    <h1>Coupons</h1>
+    <table id="coupons">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Percentage (%)</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <h2>Add new coupon</h2>
+    <form id="coupon-form" onsubmit="return false;">
+        <input type="text" name="name">
+        <input type="range" min="0" max="100" name="percentage">
+        <button onclick="onCouponAddClicked();">Add</button>
+    </form>
+</div>
+<div id="coupon-content" class="hidden content">
+    <h1>Coupon</h1>
+    <p>ID: <span id="coupon-id"></span></p>
+    <p>Name: <span id="coupon-name"></span></p>
+    <p>Percentage: <span id="coupon-percentage"></span>%</p>
+    <p>Shops: <span id="coupon-shops"></span></p>
+    <h2>Add to shops</h2>
+    <form id="coupon-shops-form" onsubmit="return false">
+        <select name="shopIds" multiple>
+        </select>
+        <button onclick="onCouponShopsAddClicked();">Add</button>
+    </form>
+</div>
+<div id="logout-content" class="hidden content">
+    <button id="logout-button">Logout</button>
+</div>
 </body>
 </html>

@@ -8,14 +8,14 @@ public class User extends AbstractModel{
     private final String name;
     private final String password;
 
-    public User(int id, String email, String name, String password) {
+    public User(int id, String name, String email, String password) {
         super(id);
         this.email = email;
         this.name = name;
         this.password = password;
     }
 
-    public User(String email, String name, String password) {
+    public User(String name, String email, String password) {
         this.email = email;
         this.name = name;
         this.password = password;

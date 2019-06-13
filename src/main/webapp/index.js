@@ -101,7 +101,7 @@ function onLoad() {
     loginContentDivEl = document.getElementById('login-content');
 
 
-    const loginButtonEl = document.getElementById('login-button');
+    const loginButtonEl = document.getElementById('login');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
 
     const registerButtonEl = document.getElementById('register-button');
