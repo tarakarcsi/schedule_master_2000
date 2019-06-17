@@ -9,4 +9,5 @@ public interface ScheduleDao {
     List<Schedule> findAllSchedules();
     Schedule findScheduleById(int scheduleId);
     List<Schedule> findAllSchedulesByUserId(int userId);
+    void addNewSchedule(int days, String title, boolean isPublished);
 }

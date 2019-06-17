@@ -16,8 +16,8 @@ public class SimpleScheduleService implements ScheduleService {
 
 
     @Override
-    public Schedule findAllSchedules(String email) throws SQLException, ServiceException {
-        
+    public List<Schedule> findAllSchedules(String email) throws SQLException, ServiceException {
+        return scheduleDao.findAllSchedules();
     }
 
     @Override
@@ -27,6 +27,11 @@ public class SimpleScheduleService implements ScheduleService {
 
     @Override
     public List<Schedule> findAllSchedulesByUserId(int userId) throws SQLException, ServiceException {
-        return null;
+        return scheduleDao.findAllSchedulesByUserId(userId);
+    }
+
+    @Override
+    public void addNewSchedule(int days, String title, boolean isPublished) {
+        scheduleDao.addNewSchedule(days, title, isPublished);
     }
 }

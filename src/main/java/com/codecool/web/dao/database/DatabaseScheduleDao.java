@@ -10,7 +10,7 @@ import java.util.List;
 public class DatabaseScheduleDao extends AbstractDao implements ScheduleDao {
 
 
-    DatabaseScheduleDao(Connection connection) {
+    public DatabaseScheduleDao(Connection connection) {
         super(connection);
     }
 
@@ -71,5 +71,19 @@ public class DatabaseScheduleDao extends AbstractDao implements ScheduleDao {
         boolean isPublished = resultSet.getBoolean("isPublished");
 
         return new Schedule(days, title, isPublished);
+    }
+
+    @Override
+    public void addNewSchedule(int days, String title, boolean isPublished) {
+        String sql = "INSERT INTO schedules(days, title, isPublished) VALUES (?,?,?);";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, days);
+            preparedStatement.setString(2, title);
+            preparedStatement.setBoolean(3, isPublished);
+
+            executeInsert(preparedStatement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
