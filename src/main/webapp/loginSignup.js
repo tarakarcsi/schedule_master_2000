@@ -1,15 +1,16 @@
 function onLoginResponse() {
     if (this.status === OK) {
         const user = JSON.parse(this.responseText);
+        showContents(['main']);
         setAuthorization(user);
-        onProfileLoad(user);
+        onProfileLoad(getAuthorization());
     } else {
         onOtherResponse(loginContentDivEl, this);
     }
 }
 
 function onRegisterResponse(){
-    //clearMessages(); 
+    //clearMessages();
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
     }else {
@@ -18,10 +19,12 @@ function onRegisterResponse(){
 }
 
 function onLoginButtonClicked() {
-    const loginDivEl = document.getElementById('login');
+    const loginFormEl = document.forms['login-form'];
+    /*const container = document.querySelector('.container');*/
+    /*container.classList.add('hidden');*/
 
-    const emailInputEl = loginDivEl.querySelector('input[name="email"]');
-    const passwordInputEl = loginDivEl.querySelector('input[name="password"]');
+    const emailInputEl = loginFormEl.querySelector('input[name="email"]');
+    const passwordInputEl = loginFormEl.querySelector('input[name="password"]');
 
     const email = emailInputEl.value;
     const password = passwordInputEl.value;
@@ -34,15 +37,16 @@ function onLoginButtonClicked() {
     xhr.addEventListener('load', onLoginResponse);
     xhr.addEventListener('error', onNetworkError);
     xhr.open('POST', 'login');
+    console.log(params);
     xhr.send(params);
 }
 
 function onRegisterButtonClicked() {
-    const registerDivEl = document.getElementById('register');
+    const registerFormEl = document.forms['register-form'];
 
-    const emailInputEl = registerDivEl.querySelector('input[name = "email"]');
-    const nameInputEl = registerDivEl.querySelector('input[name = "name"]');
-    const passwordInputEl = registerDivEl.querySelector('input[name = "password"]');
+    const emailInputEl = registerFormEl.querySelector('input[name = "email"]');
+    const nameInputEl = registerFormEl.querySelector('input[name = "name"]');
+    const passwordInputEl = registerFormEl.querySelector('input[name = "password"]');
 
     const email = emailInputEl.value;
     const password = passwordInputEl.value;
