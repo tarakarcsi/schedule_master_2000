@@ -25,7 +25,7 @@
     <div class="login">
         <div class="row">
             <div class="col-sm-12 col-md">
-                <div class="login-left" id = "login">
+                <div class="login-left" id="login">
                     <span>I have an account</span>
                     <h2>Login !</h2>
                     <form  onsubmit="startLogin(); return false;" action="">
@@ -33,7 +33,7 @@
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
                         <label for="email">password</label>
-                        <input type="submit" id = "login" value="Login" />
+                        <input type="submit" id ="login-button" value="Login" />
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>
                         <span><a href="#">Forgot Password?</a></span>
@@ -71,6 +71,35 @@
         <tbody id="users-tbody">
         </tbody>
     </table>
-</div>  
+</div>
+<nav>
+    <ul id="nav-ul">
+        <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
+        <li class="nav-li">Home</li>
+        <li class="nav-li">Task Editor</li>
+        <li class="nav-li">Schedule Editor</li>
+        <li class="nav-li">View Schedule</li>
+        <li class="nav-li">Logout</li>
+    </ul>
+</nav>
+<div id="banner">
+    <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
+    <div id="banner-text">
+        <h1>Schedule-Master-2000</h1>
+        <p>Made by: Karesz, Lali, Dénes</p>
+    </div>
+</div>
+<div id="modal" class="modal">
+    <div class="modal-header">
+        <div class="title">Profile</div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+        <p>Name: </p>
+        <p>E-mail: </p>
+        <p>Status: </p>
+    </div>
+</div>
+<div id="overlay"></div>
 </body>
 </html>
