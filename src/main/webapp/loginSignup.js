@@ -44,8 +44,6 @@ function onRegisterButtonClicked() {
     const nameInputEl = registerDivEl.querySelector('input[name = "name"]');
     const passwordInputEl = registerDivEl.querySelector('input[name = "password"]');
 
-    debugger;
-
     const email = emailInputEl.value;
     const password = passwordInputEl.value;
     const name = nameInputEl.value;
