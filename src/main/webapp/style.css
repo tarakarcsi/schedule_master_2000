@@ -284,3 +284,8 @@ nav #nav-ul .nav-li {
     pointer-events: all;
 }
 
+#schedule-parameters {
+    margin: 0 auto;
+    text-align: center;
+}
+
