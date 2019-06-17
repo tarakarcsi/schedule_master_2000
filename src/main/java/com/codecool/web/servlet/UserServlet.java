@@ -2,12 +2,10 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.dao.database.UserDao;
 import com.codecool.web.dao.database.DatabaseUserDao;
-import com.codecool.web.dao.database.UserDao;
 import com.codecool.web.model.User;
 import com.codecool.web.service.UserService;
 import com.codecool.web.service.exception.ServiceException;
 import com.codecool.web.service.Simple.SimpleUserService;
-import com.codecool.web.servlet.AbstractServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,9 +19,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/protected/users")
-public class UsersServlet extends AbstractServlet {
+public class UserServlet extends AbstractServlet {
 
-    private static final Logger logger = LoggerFactory.getLogger(UsersServlet.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
