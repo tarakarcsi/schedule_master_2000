@@ -124,6 +124,10 @@
             <option value="Saturday">Saturday</option>
             <option value="Sunday">Sunday</option>
         </select>
+        <select name="published-status" id="published-status">
+            <option value="Published">Published</option>
+            <option value="Unpublished">Unpublished</option>
+        </select>
         <button id="schedule-submit">Submit</button>
     </div>
 <%--</div>--%>
