@@ -1,8 +1,8 @@
 package com.codecool.web.model;
 
 public class Task extends AbstractModel{
-    private final String title;
-    private final String content;
+    private String title;
+    private String content;
 
     public Task(int id, String title, String content) {
         super(id);
