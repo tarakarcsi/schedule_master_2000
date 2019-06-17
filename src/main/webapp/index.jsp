@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<div class="container content">
+<!-- <div class="container content">
     <div class="login" id="loginDiv">
         <div class="row">
             <div class="col-sm-12 col-md">
@@ -73,24 +73,24 @@
         </tbody>
     </table>
 </div>
-<div class="content hidden" id="main">
-    <nav>
-        <ul id="nav-ul">
-            <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
-            <li class="nav-li">Home</li>
-            <li class="nav-li">Task Editor</li>
-            <li class="nav-li">Schedule Editor</li>
-            <li class="nav-li">View Schedule</li>
-            <li class="nav-li">Logout</li>
-        </ul>
-    </nav>
-    <div id="banner">
+<div class="content hidden" id="main"> -->
+<%--    <nav>--%>
+<%--        <ul id="nav-ul">--%>
+<%--            <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>--%>
+<%--            <li class="nav-li">Home</li>--%>
+<%--            <li class="nav-li">Task Editor</li>--%>
+<%--            <li class="nav-li">Schedule Editor</li>--%>
+<%--            <li class="nav-li">View Schedule</li>--%>
+<%--            <li class="nav-li">Logout</li>--%>
+<%--        </ul>--%>
+<%--    </nav>--%>
+    <!-- <div id="banner">
         <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
         <div id="banner-text">
             <h1>Schedule-Master-2000</h1>
             <p>Made by: Karesz, Lali, Dénes</p>
         </div>
-    </div>
+    </div> -->
     <div id="modal" class="modal">
         <div class="modal-header">
             <div class="title">Profile</div>
@@ -103,6 +103,29 @@
         </div>
     </div>
     <div id="overlay"></div>
-</div>
+
+    <div id="schedule-editor">
+        <div id="schedule-list">
+            <ul id="schedule-list-id">
+                <li>cucc</li>
+            </ul>
+        </div>
+    </div>
+    <div id="schedule-parameters">
+        <p>Title:</p>
+        <input type="text" value="title" name="title" placeholder="">
+        <p>Days:</p>
+        <select multiple name="days" id="schedule-days">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <button id="schedule-submit">Submit</button>
+    </div>
+<%--</div>--%>
 </body>
 </html>
