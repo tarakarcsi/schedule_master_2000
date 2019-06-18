@@ -1,5 +1,5 @@
 function onCreateButtonClicked() {
-    const createSceduleDivEl = document.getElementById('schedule-creator'); //ÁTÍRNI A JSP-BEN AZ ID-T
+    const createSceduleDivEl = document.getElementById('schedule-parameters');
 
     const titleInputEl = createSceduleDivEl.querySelector('input[name = "schedule-title"]');
     const daysSelectEl = createSceduleDivEl.querySelector('input[name = "days"]');
@@ -18,11 +18,11 @@ function onCreateButtonClicked() {
     xhr.addEventListener('load', onCreateScheduleResponse);
     xhr.addEventListener('error', onNetworkError);
 
-    xhr.open('POST', 'create');
+    xhr.open('POST', 'createSchedule');
     xhr.send(params);
 }
 
-function onCreateScheduleResponse(){  //MÉG NINCS ÁTÍRVA!!!!!!!!!!!!!!
+function onCreateScheduleResponse(){  
     //clearMessages();
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);

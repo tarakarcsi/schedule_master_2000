@@ -8,6 +8,7 @@ let loginContentDivEl;
 let profileContentDivEl;
 let logoutContentDivEl;
 let registerContentDivEl;
+let createScheduleContentDivEl;
 
 function newInfo(targetEl, message) {
     newMessage(targetEl, 'info', message);
@@ -99,6 +100,7 @@ function setUnauthorized() {
 function onLoad() {
     registerContentDivEl = document.getElementById('register');
     loginContentDivEl = document.getElementById('login-content');
+    createScheduleContentDivEl = document.getElementById('schedule-parameters');
 
 
     const loginButtonEl = document.getElementById('login');
