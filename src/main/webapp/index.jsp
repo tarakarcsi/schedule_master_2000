@@ -9,6 +9,7 @@
     <c:url value="/index.js" var="indexScriptUrl"/>
     <c:url value="/loginSignup.js" var="loginScriptUrl"/>
     <c:url value="/logout.js" var="logoutScriptUrl"/>
+    <c:url value="/UserPopup.js" var="UserPopupUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +19,7 @@
     <script src="${indexScriptUrl}"></script>
     <script src="${loginScriptUrl}"></script>
     <script src="${logoutScriptUrl}"></script>
-    <link rel="script" href="UserPopup.js">
+    <script src="${UserPopupUrl}"></script>
     <title>Schedule-Master-9000</title>
 </head>
 <body>
@@ -78,7 +79,7 @@
 <div class="content hidden" id="main"> -->
 <nav>
     <ul id="nav-ul">
-        <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
+        <img data-modal-target="#modali" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
         <li class="nav-li">Home</li>
         <li class="nav-li">Task Editor</li>
         <li class="nav-li">Schedule Editor</li>
@@ -93,7 +94,7 @@
             <p>Made by: Karesz, Lali, Dénes</p>
         </div>
     </div> -->
-    <div id="modal" class="modal">
+    <div id="modali" class="modali" style="display: none;">
         <div class="modal-header">
             <div class="title">Profile</div>
             <button data-close-button class="close-button">&times;</button>

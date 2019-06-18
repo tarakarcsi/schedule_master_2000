@@ -223,11 +223,11 @@ nav #nav-ul .nav-li {
     color: lightgoldenrodyellow;
 }
 
-.modal {
-    position: relative;
-    left: 14%;
-    transform: translate(-60%, -200%) scale(0);
-    border: 1px solid gray;
+.modali {
+    position: absolute;
+    left: 1%;
+    transform: translate(0%, -20%);
+    border: 2px solid rgb(31, 28, 28);;
     border-radius: 10px;
     background-color: rgb(65, 63, 61);
     color: rgb(12, 11, 11);
@@ -236,17 +236,13 @@ nav #nav-ul .nav-li {
     max-width: 80%;
 }
 
-.modal .active  {
-    transform: translate(-60%, -200%) scale(1);
-    display: block;
-}
 
 .modal-header {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid rgb(31, 28, 28);
 }
 
 .modal-header .title {
@@ -268,6 +264,17 @@ nav #nav-ul .nav-li {
     padding: 10px 15px;
 }
 
+#overlay {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0, .7);
+    pointer-events: none;
+}
+
 #overlay.active {
     opacity: 1;
     pointer-events: all;
@@ -281,10 +288,7 @@ nav #nav-ul .nav-li {
     text-align: center;
     margin: 0 auto;
     width: 80% !important;
-    position: absolute;
-    top: 25%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-top: 8%;
 }
 
 #schedule-table {
@@ -357,4 +361,3 @@ tr:nth-child(even):hover {
     border: 1px solid #fff;
     text-transform: uppercase;
 }
-
