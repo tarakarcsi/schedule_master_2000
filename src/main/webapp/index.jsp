@@ -106,7 +106,7 @@
         </div>
     </div>
 
-<div id="schedule-editor">
+<div id="schedule-editor" class="hidden">
     <div id="schedule-table">
         <table id="schedule-table-id">
             <tr>
@@ -127,7 +127,7 @@
         <h2 id="schedule-h1">Create new schedule</h2>
         <label id="schedule-label-title" for="schedule-title"><b>Title</b><br></label>
         <input type="text" name="schedule-title" required><br>
-        <div id="schedule-days">Days<br>
+        <div id="schedule-days"><b>Days</b><br>
             <select multiple name="days" id="schedule-days-list">
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
@@ -143,6 +143,39 @@
             <option value="Unpublished">Unpublished</option>
         </select><br>
         <button id="schedule-submit">Submit</button>
+    </div>
+</div>
+
+<div id="task-editor">
+    <div id="task-table">
+        <table id="task-table-id">
+            <tr>
+                <th>Tasks</th>
+            </tr>
+            <tr>
+                <td>task1</td>
+            </tr>
+            <tr>
+                <td>task2</td>
+            </tr>
+            <tr>
+                <td>task9000</td>
+            </tr>
+        </table>
+    </div>
+    <div id="task-parameters">
+        <h2 id="task-h1">Create new task</h2>
+        <label id="task-label-title"><b>Title</b></label><br>
+        <input type="text" name="task-title" required><br>
+        <div id="task-text" class="form-group shadow-textarea"><br>
+            <label for="exampleFormControlTextarea6"><b>Text</b></label>
+            <textarea name="task-textarea" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea>
+        </div>
+        <select name="published-status" id="published-task-status" required>
+            <option value="Published">Published</option>
+            <option value="Unpublished">Unpublished</option>
+        </select><br>
+        <button id="task-submit">Submit</button>
     </div>
 </div>
 </body>
