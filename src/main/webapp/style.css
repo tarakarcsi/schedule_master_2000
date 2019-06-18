@@ -309,7 +309,7 @@ th {
 }
 
 table, td, th {
-    border: 5px solid lightcoral;
+    border: 5px solid black;
 }
 
 th, td {
