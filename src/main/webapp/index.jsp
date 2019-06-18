@@ -123,6 +123,7 @@
         </table>
     </div>
     <div id="schedule-parameters">
+        <h2 id="schedule-h1">Create new schedule</h2>
         <label id="schedule-label-title" for="schedule-title"><b>Title</b><br></label>
         <input type="text" name="schedule-title" required><br>
         <div id="schedule-days">Days<br>
