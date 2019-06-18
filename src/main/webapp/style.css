@@ -268,24 +268,89 @@ nav #nav-ul .nav-li {
     padding: 10px 15px;
 }
 
-#overlay {
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0, .5);
-    pointer-events: none;
-}
-
 #overlay.active {
     opacity: 1;
     pointer-events: all;
 }
 
-#schedule-parameters {
-    margin: 0 auto;
+.close-button {
+    background: rgb(31, 28, 28);
+}
+
+#schedule-editor {
     text-align: center;
+    margin: 0 auto;
+    width: 80% !important;
+}
+
+#schedule-table {
+    float: left;
+    width: 45%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-family: arial black;
+    background: coral;
+    font-size: 30px;
+    padding: 0px !important;
+}
+
+table, td, th {
+    border: 5px solid lightcoral;
+}
+
+th, td {
+    padding: 15px;
+    font-family: arial black;
+}
+
+td {
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgb(255, 174, 97);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 173, 97, 0.349);
+}
+
+tr:nth-child(even):hover {
+    background-color: rgb(255, 174, 97);
+}
+
+#schedule-parameters {
+    width: 45%;
+    float: right;
+    padding: 10px;
+}
+
+#schedule-label-id {
+    font-family: arial black;
+
+}
+
+#schedule-days, #schedule-label-title {
+    text-align: center;
+}
+
+#schedule-label-title, #schedule-days, #published-status, #schedule-submit {
+    margin-bottom: 10px;
+}
+
+#schedule-submit {
+    background: coral;
+    padding: 5px 5px;
+    font-family: arial;
+    font-weight: bold;
+    width: 100px;
+    border: 1px solid #fff;
+    text-transform: uppercase;
 }
 

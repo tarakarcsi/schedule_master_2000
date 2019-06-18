@@ -18,6 +18,7 @@
     <script src="${indexScriptUrl}"></script>
     <script src="${loginScriptUrl}"></script>
     <script src="${logoutScriptUrl}"></script>
+    <link rel="script" href="UserPopup.js">
     <title>Schedule-Master-9000</title>
 </head>
 <body>
@@ -74,16 +75,16 @@
     </table>
 </div>
 <div class="content hidden" id="main"> -->
-<%--    <nav>--%>
-<%--        <ul id="nav-ul">--%>
-<%--            <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>--%>
-<%--            <li class="nav-li">Home</li>--%>
-<%--            <li class="nav-li">Task Editor</li>--%>
-<%--            <li class="nav-li">Schedule Editor</li>--%>
-<%--            <li class="nav-li">View Schedule</li>--%>
-<%--            <li class="nav-li">Logout</li>--%>
-<%--        </ul>--%>
-<%--    </nav>--%>
+<nav>
+    <ul id="nav-ul">
+        <img data-modal-target="#modal" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
+        <li class="nav-li">Home</li>
+        <li class="nav-li">Task Editor</li>
+        <li class="nav-li">Schedule Editor</li>
+        <li class="nav-li">View Schedule</li>
+        <li class="nav-li">Logout</li>
+    </ul>
+</nav>
     <!-- <div id="banner">
         <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
         <div id="banner-text">
@@ -102,34 +103,44 @@
             <p>Status: </p>
         </div>
     </div>
-    <div id="overlay"></div>
 
-    <div id="schedule-editor">
-        <div id="schedule-list">
-            <ul id="schedule-list-id">
-                <li>cucc</li>
-            </ul>
-        </div>
+<div id="schedule-editor">
+    <div id="schedule-table">
+        <table id="schedule-table-id">
+            <tr>
+                <th>Schedules</th>
+            </tr>
+            <tr>
+                <td>sched1</td>
+            </tr>
+            <tr>
+                <td>sched2</td>
+            </tr>
+            <tr>
+                <td>sched9000</td>
+            </tr>
+        </table>
     </div>
     <div id="schedule-parameters">
-        <p>Title:</p>
-        <input type="text" value="title" name="title" placeholder="">
-        <p>Days:</p>
-        <select multiple name="days" id="schedule-days">
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-        </select>
+        <label id="schedule-label-title" for="schedule-title"><b>Title</b><br></label>
+        <input type="text" name="schedule-title" required><br>
+        <div id="schedule-days">Days<br>
+            <select multiple name="days" id="schedule-days-list">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </div>
         <select name="published-status" id="published-status">
             <option value="Published">Published</option>
             <option value="Unpublished">Unpublished</option>
-        </select>
+        </select><br>
         <button id="schedule-submit">Submit</button>
     </div>
-<%--</div>--%>
+</div>
 </body>
 </html>
