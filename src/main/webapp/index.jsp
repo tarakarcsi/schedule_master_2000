@@ -79,7 +79,7 @@
 <div class="content hidden" id="main"> -->
 <nav>
     <ul id="nav-ul">
-        <img data-modal-target="#modali" id="list-logo" src="http://www.pngall.com/wp-content/uploads/2016/06/Biohazard-Symbol-PNG-File.png"/>
+        <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
         <li class="nav-li">Home</li>
         <li class="nav-li">Task Editor</li>
         <li class="nav-li">Schedule Editor</li>
