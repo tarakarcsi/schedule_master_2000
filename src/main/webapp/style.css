@@ -281,6 +281,10 @@ nav #nav-ul .nav-li {
     text-align: center;
     margin: 0 auto;
     width: 80% !important;
+    position: absolute;
+    top: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #schedule-table {
