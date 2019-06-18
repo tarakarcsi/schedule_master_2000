@@ -5,15 +5,7 @@ function onProfileLoad(user) {
     clearMessages();
 
     const userNameSpanEl = document.getElementById('user-name');
-    userNameSpanEl.textContent = user.name;
+    userNameSpanEl.textContent = user.getName;
 
-    if (user.admin) {
-        showContents(['menu-content']);
-        usersButtonEl.style.display = "inline";
-        onUsersButtonClicked();
-    } else {
-        showContents(['menu-content']);
-        usersButtonEl.style.display = "none";
-        onSchedulesButtonClicked();
-    }
+
 }

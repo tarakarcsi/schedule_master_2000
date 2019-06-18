@@ -30,3 +30,11 @@ function onCreateScheduleResponse(){
         onOtherResponse(createScheduleContentDivEl, this);  
     }
 }
+function onScheduleLoad() {
+    showContents(['schedule-editor']);
+}
+
+function onScheduleEditorMenuOptionButtonClicked() {
+    const scheduleButtonEl = document.querySelector('nav-schedule-editor');
+    scheduleButtonEl.addEventListener('click', onScheduleLoad);
+}

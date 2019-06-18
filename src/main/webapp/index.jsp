@@ -10,6 +10,8 @@
     <c:url value="/loginSignup.js" var="loginScriptUrl"/>
     <c:url value="/logout.js" var="logoutScriptUrl"/>
     <c:url value="/UserPopup.js" var="UserPopupUrl"/>
+    <c:url value="/schedules.js" var="schedulesScriptUrl"/>
+    <c:url value="/profile.js" var="schedulesScriptUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,15 +19,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="${indexScriptUrl}"></script>
+    <script src="${profileScriptUrl}"></script>
     <script src="${loginScriptUrl}"></script>
     <script src="${logoutScriptUrl}"></script>
     <script src="${UserPopupUrl}"></script>
+    <script src="${schedulesScriptUrl}"></script>
     <title>Schedule-Master-9000</title>
 </head>
 <body>
 
 
-<!-- <div class="container content">
+<div class="container content">
     <div class="login" id="loginDiv">
         <div class="row">
             <div class="col-sm-12 col-md">
@@ -76,24 +80,24 @@
         </tbody>
     </table>
 </div>
-<div class="content hidden" id="main"> -->
+<div class="content hidden" id="main">
 <nav>
     <ul id="nav-ul">
         <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
-        <li class="nav-li">Home</li>
-        <li class="nav-li">Task Editor</li>
-        <li class="nav-li">Schedule Editor</li>
-        <li class="nav-li">View Schedule</li>
-        <li class="nav-li">Logout</li>
+        <li id="nav-home" class="nav-li">Home</li>
+        <li id="nav-task-editor" class="nav-li">Task Editor</li>
+        <li id="nav-schedule-editor" class="nav-li">Schedule Editor</li>
+        <li id="nav-view-schedule" class="nav-li">View Schedule</li>
+        <li id="nav-logout" class="nav-li">Logout</li>
     </ul>
 </nav>
-    <!-- <div id="banner">
+     <div id="banner">
         <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
         <div id="banner-text">
             <h1>Schedule-Master-2000</h1>
             <p>Made by: Karesz, Lali, Dénes</p>
         </div>
-    </div> -->
+    </div>
     <div id="modali" class="modali" style="display: none;">
         <div class="modal-header">
             <div class="title">Profile</div>
@@ -146,7 +150,7 @@
     </div>
 </div>
 
-<div id="task-editor">
+<div id="task-editor" class="hidden">
     <div id="task-table">
         <table id="task-table-id">
             <tr>
