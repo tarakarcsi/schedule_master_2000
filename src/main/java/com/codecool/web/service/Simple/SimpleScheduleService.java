@@ -31,7 +31,7 @@ public class SimpleScheduleService implements ScheduleService {
     }
 
     @Override
-    public void addNewSchedule(int days, String title, boolean isPublished) {
+    public void addNewSchedule(String days, String title, boolean isPublished) throws SQLException {
         scheduleDao.addNewSchedule(days, title, isPublished);
     }
 }

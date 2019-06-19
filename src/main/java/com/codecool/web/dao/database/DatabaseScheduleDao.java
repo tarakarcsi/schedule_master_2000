@@ -66,7 +66,7 @@ public class DatabaseScheduleDao extends AbstractDao implements ScheduleDao {
     }
 
     public Schedule fetchSchedule(ResultSet resultSet) throws SQLException {
-        int days = resultSet.getInt("scheduleId");
+        String days = resultSet.getString("scheduleId");
         String title = resultSet.getString("title");
         boolean isPublished = resultSet.getBoolean("isPublished");
 
@@ -74,16 +74,14 @@ public class DatabaseScheduleDao extends AbstractDao implements ScheduleDao {
     }
 
     @Override
-    public void addNewSchedule(int days, String title, boolean isPublished) {
+    public void addNewSchedule(String days, String title, boolean isPublished) throws SQLException{
         String sql = "INSERT INTO schedules(days, title, isPublished) VALUES (?,?,?);";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setInt(1, days);
+            preparedStatement.setString(1, days);
             preparedStatement.setString(2, title);
             preparedStatement.setBoolean(3, isPublished);
 
             executeInsert(preparedStatement);
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }
