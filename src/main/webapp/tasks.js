@@ -23,6 +23,10 @@ function onCreateTaskButtonClicked() {
     xhr.send(params);
 }
 
+function taskCreatedAlert() {
+    alert("Task created successfully!");
+}
+
 function onCreateTaskResponse(){
     //clearMessages();
     if (this.status === OK) {

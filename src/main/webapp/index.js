@@ -64,9 +64,6 @@ function onNetworkError(response) {
     newError(bodyEl, 'Network error, please try reloaing the page');
 }
 
-
-
-
 function onOtherResponse(targetEl, xhr) {
     if (xhr.status === NOT_FOUND) {
         newError(targetEl, 'Not found');
@@ -120,8 +117,9 @@ function onLoad() {
     taskButtonEl.addEventListener('click', onTaskLoad);
 
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
+    submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
+    submitTaskButtonEl.addEventListener('click', taskCreatedAlert);
     submitTaskButtonEl.addEventListener('click', onCreateTaskButtonClicked);
-
 
 }
 

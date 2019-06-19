@@ -22,6 +22,10 @@ function onCreateButtonClicked() {
     xhr.send(params);
 }
 
+function scheduleCreatedAlert() {
+    alert("Schedule created successfully!");
+}
+
 function onCreateScheduleResponse(){  
     //clearMessages();
     if (this.status === OK) {
