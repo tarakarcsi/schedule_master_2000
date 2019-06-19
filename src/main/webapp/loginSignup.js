@@ -1,6 +1,6 @@
 function onLoginResponse() {
     if (this.status === OK) {
-        const user = JSON.parse(this.responseText);
+        //const user = JSON.parse(this.responseText);
         showContents(['main']);
         // setAuthorization(user);
         // onProfileLoad(getAuthorization());

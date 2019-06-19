@@ -102,15 +102,14 @@ function onLoad() {
     loginContentDivEl = document.getElementById('login-content');
     createScheduleContentDivEl = document.getElementById('schedule-parameters');
 
-
-    //debugger;
-
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
 
     const registerButtonEl = document.getElementById('register-button');
     registerButtonEl.addEventListener('click', onRegisterButtonClicked);
     
+    const scheduleButtonEl = document.getElementById('nav-schedule-editor');
+    scheduleButtonEl.addEventListener('click', onScheduleLoad);
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);
