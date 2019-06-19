@@ -6,7 +6,7 @@ function onCreateTaskButtonClicked() {
     const createTaskDivEl = document.getElementById('task-parameters');
 
     const titleInputEl = createTaskDivEl.querySelector('input[name = "task-title"]');
-    const textSelectEl = document.querySelector('textarea[class = "task-textarea"]');
+    const textSelectEl = document.querySelector('textarea[name = "task-textarea"]');
 
     const title = titleInputEl.value;
     const text = textSelectEl.value;
@@ -23,11 +23,12 @@ function onCreateTaskButtonClicked() {
     xhr.send(params);
 }
 
-// function onCreateTaskResponse(){
-//     //clearMessages();
-//     if (this.status === OK) {
-//         const text = JSON.parse(this.responseText);
-//     }else {
-//         onOtherResponse(submitScheduleButtonEl, this);
-//     }
+function onCreateTaskResponse(){
+    //clearMessages();
+    if (this.status === OK) {
+        const text = JSON.parse(this.responseText);
+    }else {
+        onOtherResponse(submitTaskButtonEl, this);
+    }
+}
 
