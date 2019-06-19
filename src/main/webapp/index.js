@@ -9,6 +9,7 @@ let profileContentDivEl;
 let logoutContentDivEl;
 let registerContentDivEl;
 let createScheduleContentDivEl;
+let scheduleEditorDivEl;
 
 function newInfo(targetEl, message) {
     newMessage(targetEl, 'info', message);
@@ -101,6 +102,7 @@ function onLoad() {
     registerContentDivEl = document.getElementById('register');
     loginContentDivEl = document.getElementById('login-content');
     createScheduleContentDivEl = document.getElementById('schedule-parameters');
+    scheduleEditorDivEl = document.getElementById('schedule-editor');
 
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);

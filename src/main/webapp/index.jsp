@@ -11,7 +11,7 @@
     <c:url value="/logout.js" var="logoutScriptUrl"/>
     <c:url value="/UserPopup.js" var="UserPopupUrl"/>
     <c:url value="/schedules.js" var="schedulesScriptUrl"/>
-    <c:url value="/profile.js" var="schedulesScriptUrl"/>
+    <c:url value="/profile.js" var="profileScriptUrl"/>
     <c:url value="/tasks.js" var="tasksScriptUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@
     </table>
 </div>
 <div class="content hidden" id="main">
-<nav>
+<nav class="content">
     <ul id="nav-ul">
         <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
         <li id="nav-home" class="nav-li">Home</li>
