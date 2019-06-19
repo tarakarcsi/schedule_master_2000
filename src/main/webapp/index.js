@@ -105,6 +105,7 @@ function onLoad() {
     submitScheduleButtonEl = document.getElementById('schedule-submit');
     scheduleEditorDivEl = document.getElementById('schedule-editor');
     taskEditorDivEl = document.getElementById('task-editor');
+    submitTaskButtonEl = document.getElementById('task-submit');
 
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
@@ -119,6 +120,10 @@ function onLoad() {
     taskButtonEl.addEventListener('click', onTaskLoad);
 
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
+
+    submitTaskButtonEl.addEventListener('click', onCreateTaskButtonClicked);
+
+
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);
