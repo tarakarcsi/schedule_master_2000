@@ -83,7 +83,7 @@
     </table>
 </div>
 <div class="content hidden" id="main">
-<nav class="content">
+<nav>
     <ul id="nav-ul">
         <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
         <li id="nav-home" class="nav-li">Home</li>
@@ -93,7 +93,7 @@
         <li id="nav-logout" class="nav-li">Logout</li>
     </ul>
 </nav>
-     <div id="banner">
+     <div id="banner" class="content">
         <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
         <div id="banner-text">
             <h1>Schedule-Master-2000</h1>
@@ -183,6 +183,7 @@
         </select><br>
         <button id="task-submit">Submit</button>
     </div>
+</div>
 </div>
 </body>
 </html>

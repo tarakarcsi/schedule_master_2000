@@ -31,6 +31,6 @@ function onCreateScheduleResponse(){
     }
 }
 function onScheduleLoad() {
-    showContents(['schedule-editor']);
+    showContents(['main', 'schedule-editor']);
 }
 
