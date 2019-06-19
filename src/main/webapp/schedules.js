@@ -6,11 +6,14 @@ function onCreateButtonClicked() {
     const publishedStatusSelectEl = document.getElementById('published-status');
 
     const title = titleInputEl.value;
-    const days = daysSelectEl.value;
     const publishedStatus = publishedStatusSelectEl.value;
+    debugger;
+    const days = $('#schedule-days-list').val(); // visszaad egy listát, benne az option-ökkel
+
 
     const params = new URLSearchParams();
     params.append('title', title);
+    debugger;
     params.append('days', days);
     params.append('publishedStatus', publishedStatus);
 
