@@ -41,7 +41,7 @@
                         <label for="email">E-mail</label>
                         <input type="password" name="password" placeholder="" />
                         <label for="email">password</label>
-                        <input type="submit" id ="login-button" value="Login" onclick="onLoginButtonClicked()"/>
+                        <input type="submit" id ="login-button" value="Login"/>
                         <input type="checkbox" name="" id="check1" />
                         <label class="check" for="check1">Remember me </label>
                         <span><a href="#">Forgot Password?</a></span>

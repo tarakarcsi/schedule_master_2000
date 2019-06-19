@@ -103,7 +103,9 @@ function onLoad() {
     createScheduleContentDivEl = document.getElementById('schedule-parameters');
 
 
-    const loginButtonEl = document.getElementById('login');
+    //debugger;
+
+    const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
 
     const registerButtonEl = document.getElementById('register-button');
