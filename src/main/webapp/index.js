@@ -10,6 +10,7 @@ let logoutContentDivEl;
 let registerContentDivEl;
 let createScheduleContentDivEl;
 let scheduleEditorDivEl;
+let taskEditorDivEl;
 
 function newInfo(targetEl, message) {
     newMessage(targetEl, 'info', message);
@@ -101,8 +102,9 @@ function setUnauthorized() {
 function onLoad() {
     registerContentDivEl = document.getElementById('register');
     loginContentDivEl = document.getElementById('login-content');
-    createScheduleContentDivEl = document.getElementById('schedule-parameters');
+    submitScheduleButtonEl = document.getElementById('schedule-submit');
     scheduleEditorDivEl = document.getElementById('schedule-editor');
+    taskEditorDivEl = document.getElementById('task-editor');
 
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
@@ -112,6 +114,11 @@ function onLoad() {
     
     const scheduleButtonEl = document.getElementById('nav-schedule-editor');
     scheduleButtonEl.addEventListener('click', onScheduleLoad);
+
+    const taskButtonEl = document.getElementById('nav-task-editor');
+    taskButtonEl.addEventListener('click', onTaskLoad);
+
+    submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);

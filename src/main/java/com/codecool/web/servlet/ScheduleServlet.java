@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet("/schedules")
+@WebServlet("/createSchedule")
 public class ScheduleServlet extends AbstractServlet {
 
     @Override
@@ -29,9 +29,9 @@ public class ScheduleServlet extends AbstractServlet {
             ScheduleDao scheduleDao = new DatabaseScheduleDao(connection);
             ScheduleService scheduleService = new SimpleScheduleService(scheduleDao);
 
-            int days = Integer.parseInt(req.getParameter("days"));
+            String days = req.getParameter("days");
             String title = req.getParameter("title");
-            boolean isPublished = Boolean.valueOf(req.getParameter("published-status"));
+            boolean isPublished = Boolean.valueOf(req.getParameter("publishedStatus"));
 
             scheduleService.addNewSchedule(days, title, isPublished);
             Schedule schedule = new Schedule(days, title, isPublished);

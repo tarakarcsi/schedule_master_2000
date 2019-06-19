@@ -15,7 +15,7 @@ password text not null
 
 create table schedules(
 scheduleId serial primary key,
-days int,
+days text,
 title text,
 isPublished boolean default false,
 userId int,
@@ -53,9 +53,9 @@ insert into users(email, name, password) values('lali@lali', 'lali', 'lali');
 insert into users(email, name, password) values('lakatos@denerisz', 'Lakatos Denerisz', 'denerisz69');
 
 
-insert into schedules(days, title, isPublished, userId) values(3, 'edzésterv', false, 1);
-insert into schedules(days, title, isPublished, userId) values(5, 'feladatok', false, 2);
-insert into schedules(days, title, isPublished, userId) values(7, 'programok', false, 3);
+insert into schedules(days, title, isPublished, userId) values('monday', 'edzésterv', false, 1);
+insert into schedules(days, title, isPublished, userId) values('tuesday', 'feladatok', false, 2);
+insert into schedules(days, title, isPublished, userId) values('sunday', 'programok', false, 3);
 
 insert into tasks(title, content) values('bevásárlás', 'asd');
 insert into tasks(title, content) values('edzés', 'sfsdf');

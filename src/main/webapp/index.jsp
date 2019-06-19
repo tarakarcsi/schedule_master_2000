@@ -145,8 +145,8 @@
             </select>
         </div>
         <select name="published-status" id="published-status">
-            <option value="Published">Published</option>
-            <option value="Unpublished">Unpublished</option>
+            <option value="true">Published</option>
+            <option value="false">Unpublished</option>
         </select><br>
         <button id="schedule-submit">Submit</button>
     </div>
@@ -178,8 +178,8 @@
             <textarea name="task-textarea" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea>
         </div>
         <select name="published-status" id="published-task-status" required>
-            <option value="Published">Published</option>
-            <option value="Unpublished">Unpublished</option>
+            <option value="true">Published</option>
+            <option value="false">Unpublished</option>
         </select><br>
         <button id="task-submit">Submit</button>
     </div>
