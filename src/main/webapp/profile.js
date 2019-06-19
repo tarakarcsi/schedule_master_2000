@@ -5,7 +5,7 @@ function onProfileLoad(user) {
     clearMessages();
 
     const userNameSpanEl = document.getElementById('user-name');
-    userNameSpanEl.textContent = user.getName;
+    userNameSpanEl.textContent = user.getName();
 
 
 }

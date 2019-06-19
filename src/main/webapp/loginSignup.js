@@ -2,8 +2,8 @@ function onLoginResponse() {
     if (this.status === OK) {
         const user = JSON.parse(this.responseText);
         showContents(['main']);
-        setAuthorization(user);
-        onProfileLoad(getAuthorization());
+        // setAuthorization(user);
+        // onProfileLoad(getAuthorization());
     } else {
         onOtherResponse(loginContentDivEl, this);
     }
@@ -20,8 +20,6 @@ function onRegisterResponse(){
 
 function onLoginButtonClicked() {
     const loginFormEl = document.forms['login-form'];
-    /*const container = document.querySelector('.container');*/
-    /*container.classList.add('hidden');*/
 
     const emailInputEl = loginFormEl.querySelector('input[name="email"]');
     const passwordInputEl = loginFormEl.querySelector('input[name="password"]');
