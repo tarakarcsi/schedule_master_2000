@@ -8,7 +8,7 @@ import java.util.List;
 
 public class DatabaseTaskDao extends AbstractDao implements TaskDao{
 
-    DatabaseTaskDao(Connection connection) {
+    public DatabaseTaskDao(Connection connection) {
         super(connection);
     }
 
