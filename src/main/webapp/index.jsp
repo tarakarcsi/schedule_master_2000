@@ -12,6 +12,7 @@
     <c:url value="/UserPopup.js" var="UserPopupUrl"/>
     <c:url value="/schedules.js" var="schedulesScriptUrl"/>
     <c:url value="/profile.js" var="schedulesScriptUrl"/>
+    <c:url value="/tasks.js" var="tasksScriptUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,6 +25,7 @@
     <script src="${logoutScriptUrl}"></script>
     <script src="${UserPopupUrl}"></script>
     <script src="${schedulesScriptUrl}"></script>
+    <script src="${tasksScriptUrl}"></script>
     <title>Schedule-Master-9000</title>
 </head>
 <body>
@@ -110,7 +112,7 @@
         </div>
     </div>
 
-<div id="schedule-editor" class="hidden">
+<div id="schedule-editor" class="content hidden">
     <div id="schedule-table">
         <table id="schedule-table-id">
             <tr>
@@ -150,7 +152,7 @@
     </div>
 </div>
 
-<div id="task-editor" class="hidden">
+<div id="task-editor" class="content hidden">
     <div id="task-table">
         <table id="task-table-id">
             <tr>
