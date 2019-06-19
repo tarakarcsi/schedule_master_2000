@@ -120,7 +120,6 @@ function onLoad() {
     taskButtonEl.addEventListener('click', onTaskLoad);
 
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
-
     submitTaskButtonEl.addEventListener('click', onCreateTaskButtonClicked);
 
 
