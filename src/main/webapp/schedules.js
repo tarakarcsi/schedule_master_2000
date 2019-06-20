@@ -51,11 +51,17 @@ function onScheduleLoad(schedules) {
 
 function appendScheduleToScheduleList(schedule)  { // append one schedule to list
     const scheduleTitleEl = document.createElement('td');
+
     scheduleTitleEl.textContent = schedule.title;
+    scheduleTitleEl.setAttribute('draggable', 'true');
+    scheduleTitleEl.setAttribute('ondragstart', 'drag(event)');
+    scheduleTitleEl.setAttribute('id', schedule.title);
+
 
     const trEl = document.createElement('tr');
     trEl.appendChild(scheduleTitleEl);
-
+    trEl.setAttribute('draggable', 'true');
+    trEl.setAttribute('ondragstart', 'drag(event)');
     scheduleTableBodyEl.appendChild(trEl);
 }
 
@@ -67,6 +73,20 @@ function appendSchedules(schedules) { // extending the schedule list
         const schedule = schedules[i];
         appendScheduleToScheduleList(schedule);
     }
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data)).style.display = "none";
 }
 
 

@@ -114,7 +114,7 @@
 
 <div id="schedule-editor" class="content hidden">
     <div id="schedule-table">
-        <table id="schedule-table-id">
+        <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
             <tr>
                 <th>Schedules</th>
             </tr>
@@ -123,6 +123,10 @@
 
             </tbody>
         </table>
+        <br>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+            <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Kuka" style="width: 120px;">
+        </div>
     </div>
     <div id="schedule-parameters">
         <h2 id="schedule-h1">Create new schedule</h2>
