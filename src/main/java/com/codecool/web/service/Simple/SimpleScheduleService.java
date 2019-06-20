@@ -16,7 +16,7 @@ public class SimpleScheduleService implements ScheduleService {
 
 
     @Override
-    public List<Schedule> findAllSchedules(String email) throws SQLException, ServiceException {
+    public List<Schedule> findAllSchedules() throws SQLException, ServiceException {
         return scheduleDao.findAllSchedules();
     }
 

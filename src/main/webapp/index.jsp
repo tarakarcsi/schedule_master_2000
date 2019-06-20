@@ -118,15 +118,10 @@
             <tr>
                 <th>Schedules</th>
             </tr>
-            <tr>
-                <td>sched1</td>
-            </tr>
-            <tr>
-                <td>sched2</td>
-            </tr>
-            <tr>
-                <td>sched9000</td>
-            </tr>
+
+            <tbody>
+
+            </tbody>
         </table>
     </div>
     <div id="schedule-parameters">
