@@ -103,6 +103,7 @@ function onLoad() {
     scheduleEditorDivEl = document.getElementById('schedule-editor');
     taskEditorDivEl = document.getElementById('task-editor');
     submitTaskButtonEl = document.getElementById('task-submit');
+    homeContentDivEl = document.getElementById('main');
 
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
@@ -118,6 +119,9 @@ function onLoad() {
 
     const logoutButtonEl = document.getElementById('nav-logout');
     logoutButtonEl.addEventListener('click', onLogoutLoad);
+
+    const homeButtonEL = document.getElementById('nav-home');
+    homeButtonEL.addEventListener('click', onLoginButtonClicked);
 
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
