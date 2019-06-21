@@ -98,7 +98,7 @@ function setUnauthorized() {
 
 function onLoad() {
     registerContentDivEl = document.getElementById('register');
-    loginContentDivEl = document.getElementById('login-content');
+    loginContentDivEl = document.getElementById('container');
     submitScheduleButtonEl = document.getElementById('schedule-submit');
     scheduleEditorDivEl = document.getElementById('schedule-editor');
     taskEditorDivEl = document.getElementById('task-editor');
@@ -116,7 +116,8 @@ function onLoad() {
     const taskButtonEl = document.getElementById('nav-task-editor');
     taskButtonEl.addEventListener('click', onTaskLoad);
 
-    const logoutButtonEl = document.getElementById()
+    const logoutButtonEl = document.getElementById('nav-logout');
+    logoutButtonEl.addEventListener('click', onLogoutLoad);
 
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);

@@ -15,3 +15,7 @@ function onLogoutButtonClicked(event) {
     xhr.open('POST', 'logout');
     xhr.send();
 }
+
+function onLogoutLoad() {
+    showContents(['container']);
+}
