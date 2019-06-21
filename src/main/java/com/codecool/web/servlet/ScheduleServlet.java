@@ -37,7 +37,7 @@ public class ScheduleServlet extends AbstractServlet {
 
             sendMessage(resp, HttpServletResponse.SC_OK, scheduleList);
         } catch (SQLException e) {
-            e.printStackTrace();
+            e. printStackTrace();
         } catch (ServiceException e) {
             e.printStackTrace();
         }
