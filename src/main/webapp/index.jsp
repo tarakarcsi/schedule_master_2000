@@ -115,12 +115,10 @@
 <div id="schedule-editor" class="content hidden">
     <div id="schedule-table">
         <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <tr>
-                <th>Schedules</th>
-            </tr>
-
+             <div>
+                <p style="margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
+             </div>
             <tbody>
-
             </tbody>
         </table>
         <br>

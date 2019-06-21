@@ -116,6 +116,8 @@ function onLoad() {
     const taskButtonEl = document.getElementById('nav-task-editor');
     taskButtonEl.addEventListener('click', onTaskLoad);
 
+    const logoutButtonEl = document.getElementById()
+
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
     submitTaskButtonEl.addEventListener('click', taskCreatedAlert);
