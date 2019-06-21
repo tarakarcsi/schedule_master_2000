@@ -39,9 +39,9 @@
                     <span>I have an account</span>
                     <h2>Login !</h2>
                     <form id="login-form" onsubmit="return false;" >
-                        <input type="email" name="email" />
+                        <input type="email" name="email" required/>
                         <label for="email">E-mail</label>
-                        <input type="password" name="password" placeholder="" />
+                        <input type="password" name="password" placeholder="" required/>
                         <label for="email">password</label>
                         <input type="submit" id ="login-button" value="Login"/>
                         <input type="checkbox" name="" id="check1" />
@@ -55,11 +55,11 @@
                     <span>Not a member</span>
                     <h2>Signup !</h2>
                     <form id="register-form" onsubmit="return false;">
-                        <input type="text" name="name" placeholder="" />
+                        <input type="text" name="name" placeholder="" required/>
                         <label for="email">Full name</label>
-                        <input type="email" name="email" placeholder="" />
+                        <input type="email" name="email" placeholder="" required/>
                         <label for="email">E-mail</label>
-                        <input type="password" name="password" placeholder="" />
+                        <input type="password" name="password" placeholder="" required/>
                         <label for="email">password</label>
                         <input type="submit" value="Sign in" id = "register-button" />
                     </form>

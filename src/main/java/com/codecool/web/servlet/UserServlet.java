@@ -18,7 +18,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/protected/users")
+@WebServlet("/user")
 public class UserServlet extends AbstractServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(UserServlet.class);
@@ -28,17 +28,10 @@ public class UserServlet extends AbstractServlet {
         try (Connection connection = getConnection(req.getServletContext())) {
             User user = (User) req.getSession().getAttribute("user");
 
-            UserDao userDao = new DatabaseUserDao(connection);
-            UserService userService = new SimpleUserService(userDao);
-            List<User> users = userService.getAllUsers();
-
-            sendMessage(resp, 200, users);
+            sendMessage(resp, 200, user);
             logger.debug("Users are listed by " + user.getEmail() + ".");
         } catch (SQLException e) {
             handleSqlError(resp, e);
-            logger.debug("Exception has been caught: " + e.getMessage());
-        } catch (ServiceException e) {
-            sendMessage(resp, 401, e.getMessage());
             logger.debug("Exception has been caught: " + e.getMessage());
         }
     }
