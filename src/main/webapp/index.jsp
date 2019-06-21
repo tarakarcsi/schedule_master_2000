@@ -151,20 +151,18 @@
 
 <div id="task-editor" class="content hidden">
     <div id="task-table">
-        <table id="task-table-id">
+        <table id="task-table-id"  ondrop="drop(event)" ondragover="allowDrop(event)" >
             <tr>
                 <th>Tasks</th>
             </tr>
-            <tr>
-                <td>task1</td>
-            </tr>
-            <tr>
-                <td>task2</td>
-            </tr>
-            <tr>
-                <td>task9000</td>
-            </tr>
+
+            <tbody>
+
+            </tbody>
         </table>
+    </div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+        <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Bin" style="width: 120px;">
     </div>
     <div id="task-parameters">
         <h2 id="task-h1">Create new task</h2>

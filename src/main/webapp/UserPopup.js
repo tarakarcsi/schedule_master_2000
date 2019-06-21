@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         });
 
-        function addUser(user) {
+        function displayUserInfo(user) {
             const userNameEl = document.createElement('p');
             const userEmailEl = document.createElement('p');
 
@@ -29,7 +29,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
             userDivEl.appendChild(userEmailEl);
         }
 
+        function onUserInfoLoad() {
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', );
+            xhr.addEventListener('error', onNetworkError);
+
+            xhr.open('GET', 'user');
+            xhr.send();
+
+        }
+
+        function onUserInfoResponse() {
+            if (this.status === OK) {
+                const text = JSON.parse(this.responseText);
+                displayUserInfo(text);
+            // }else {
+            //     onOtherResponse(, this);  
+            }
+        }
     });
+
+
 
 
 
