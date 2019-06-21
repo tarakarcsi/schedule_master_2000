@@ -93,13 +93,6 @@
         <li id="nav-logout" class="nav-li">Logout</li>
     </ul>
 </nav>
-     <div id="banner" class="content">
-        <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
-        <div id="banner-text">
-            <h1>Schedule-Master-2000</h1>
-            <p>Made by: Karesz, Lali, Dénes</p>
-        </div>
-    </div>
     <div id="modali" class="modali" style="display: none;">
         <div class="modal-header">
             <div class="title">Profile</div>
@@ -109,6 +102,13 @@
             <p>Name: </p>
             <p>E-mail: </p>
             <p>Status: </p>
+        </div>
+    </div>
+    <div id="banner" class="content">
+        <img src="https://i.pinimg.com/originals/ea/00/0c/ea000cc6fb9375b14a7b21d55dcf9745.jpg">
+        <div id="banner-text">
+            <h1>Schedule-Master-2000</h1>
+            <p>Made by: Karesz, Lali, Dénes</p>
         </div>
     </div>
 
