@@ -116,7 +116,7 @@
     <div id="schedule-table">
         <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
              <div>
-                <p style="margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
+                <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
              </div>
             <tbody>
             </tbody>
@@ -152,17 +152,16 @@
 <div id="task-editor" class="content hidden">
     <div id="task-table">
         <table id="task-table-id"  ondrop="drop(event)" ondragover="allowDrop(event)" >
-            <tr>
-                <th>Tasks</th>
-            </tr>
-
+            <div>
+                <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Tasks</b></p>
+            </div>
             <tbody>
-
             </tbody>
         </table>
-    </div>
-    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
-        <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Bin" style="width: 120px;">
+        <br>
+        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+            <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Bin" style="width: 120px;">
+        </div>
     </div>
     <div id="task-parameters">
         <h2 id="task-h1">Create new task</h2>
