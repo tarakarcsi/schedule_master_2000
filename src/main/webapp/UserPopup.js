@@ -16,37 +16,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 userInfo.style.display = "none";
             }
         });
-
-        function displayUserInfo(user) {
-            const userNameEl = document.createElement('p');
-            const userEmailEl = document.createElement('p');
-
-            userNameEl.textContent = "Name:    " + user.name;
-            userEmailEl.textContent = "E-mail:    " + user.email;
-
-            const userDivEl = document.querySelector('.modal-body');
-            userDivEl.appendChild(userNameEl);
-            userDivEl.appendChild(userEmailEl);
-        }
-
-        function onUserInfoLoad() {
-            const xhr = new XMLHttpRequest();
-            xhr.addEventListener('load', );
-            xhr.addEventListener('error', onNetworkError);
-
-            xhr.open('GET', 'user');
-            xhr.send();
-
-        }
-
-        function onUserInfoResponse() {
-            if (this.status === OK) {
-                const text = JSON.parse(this.responseText);
-                displayUserInfo(text);
-            // }else {
-            //     onOtherResponse(, this);  
-            }
-        }
     });
 
 

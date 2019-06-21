@@ -123,6 +123,9 @@ function onLoad() {
     const homeButtonEL = document.getElementById('nav-home');
     homeButtonEL.addEventListener('click', onLoginButtonClicked);
 
+    const profileButtonEl = document.getElementById('list-logo');
+    profileButtonEl.addEventListener('click', onUserInfoLoad);
+
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
     submitTaskButtonEl.addEventListener('click', taskCreatedAlert);
