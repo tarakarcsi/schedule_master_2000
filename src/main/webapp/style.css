@@ -227,10 +227,10 @@ nav #nav-ul .nav-li {
     position: absolute;
     left: 1%;
     transform: translate(0%, 10%);
-    border: 2px solid rgb(31, 28, 28);;
+    border: 2px solid gray;
     border-radius: 10px;
     background-color: rgb(65, 63, 61);
-    color: rgb(12, 11, 11);
+    color: gray;
     z-index: 10;
     width: 400px;
     max-width: 80%;
@@ -242,7 +242,7 @@ nav #nav-ul .nav-li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgb(31, 28, 28);
+    border-bottom: 3px solid gray;
 }
 
 .modal-header .title {
@@ -262,6 +262,10 @@ nav #nav-ul .nav-li {
 
 .modal-body {
     padding: 10px 15px;
+}
+
+.modal-body, p {
+    font-weight: bold;
 }
 
 #overlay {

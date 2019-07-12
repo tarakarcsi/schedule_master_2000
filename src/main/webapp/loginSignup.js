@@ -1,9 +1,8 @@
 function onLoginResponse() {
     if (this.status === OK) {
-        //const user = JSON.parse(this.responseText);
+        const user = JSON.parse(this.responseText);
+        setAuthorization(user);
         showContents(['main', 'banner']);
-        // setAuthorization(user);
-        // onProfileLoad(getAuthorization());
     } else {
         onOtherResponse(loginContentDivEl, this);
     }
