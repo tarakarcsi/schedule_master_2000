@@ -163,7 +163,7 @@
             <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Bin" style="width: 120px;">
         </div>
     </div>
-    <div id="task-parameters">
+    <div id="task-parameters" class="content hidden">
         <h2 id="task-h1">Create new task</h2>
         <label id="task-label-title"><b>Title</b></label><br>
         <input type="text" name="task-title" required><br>
@@ -172,6 +172,15 @@
             <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
             <button id="task-submit">Submit</button>
         </div>
+    </div>
+    <div id="task-modifier" class="content hidden">
+        <h2 id="task-h1">Modify task</h2>
+        <label id="task-label-title"><b>Title</b></label><br>
+        <input type="text" name="task-title" required><br>
+        <div id="task-text" class="form-group shadow-textarea"><br>
+            <label for="exampleFormControlTextarea6"><b>Text</b></label>
+            <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
+            <button id="task-submit">Submit</button>
     </div>
 </div>
 </div>

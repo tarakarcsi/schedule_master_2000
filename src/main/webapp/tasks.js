@@ -35,7 +35,7 @@ function onTaskLoad() {
     xhr.open('GET', 'createTask');
     xhr.send();
 
-    showContents(['main', 'task-editor']);
+    showContents(['main', 'task-editor', 'task-parameters']);
 }
 
 function displayTasks(taskList) {
