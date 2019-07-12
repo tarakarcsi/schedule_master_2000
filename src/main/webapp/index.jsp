@@ -174,13 +174,13 @@
         </div>
     </div>
     <div id="task-modifier" class="content hidden">
-        <h2 id="task-h1">Modify task</h2>
-        <label id="task-label-title"><b>Title</b></label><br>
-        <input type="text" name="task-title" required><br>
-        <div id="task-text" class="form-group shadow-textarea"><br>
+        <h2 id="task-modifier-h1">Modify task</h2>
+        <label id="task-modifier-label-title"><b>Title</b></label><br>
+        <input type="text" name="task-modifier-title" required><br>
+        <div id="task-modifier-text" class="form-group shadow-textarea"><br>
             <label for="exampleFormControlTextarea6"><b>Text</b></label>
             <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
-            <button id="task-submit">Submit</button>
+            <button id="task-modifier-submit">Submit</button>
     </div>
 </div>
 </div>

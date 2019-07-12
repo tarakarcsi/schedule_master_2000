@@ -404,6 +404,30 @@ tr:nth-child(even):hover {
     border: 1px solid #fff;
     text-transform: uppercase;
 }
+#task-modifier {
+    width: 45%;
+    float: right;
+    padding: 10px;
+}
+
+#task-label-id {
+    font-family: arial black;
+
+}
+
+#task-modofier-label-title, #published-task-status, #task-submit {
+    margin-bottom: 10px;
+}
+
+#task-modifier-submit {
+    background: coral;
+    padding: 5px 5px;
+    font-family: arial;
+    font-weight: bold;
+    width: 100px;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+}
 
 textarea {
     height: 150px !important;
