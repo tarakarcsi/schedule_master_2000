@@ -1,5 +1,6 @@
 let taskTableBodyEl;
 let taskTableEl;
+let activeTask;
 
 
 
@@ -103,4 +104,20 @@ function onTaskModifyButtonClicked(task) {
     const EltaskContent = document.getElementById('exampleFormControlTextarea');
     EltaskTitle.setAttribute('value',task.title);
     EltaskContent.value = task.content;
+    activeTask=task;
+
 }
+
+
+function sendTaskModify(task) {
+    const xhr = new XMLHttpRequest();
+    const url = new URLSearchParams();
+    url.append('taskId',task.id);
+    url.append('title',task.title);
+    url.append('text',task.text);
+    xhr.addEventListener('error', onNetworkError);
+
+    xhr.open('POST', 'taskModifier');
+    xhr.send(url);
+}
+

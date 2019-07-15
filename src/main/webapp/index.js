@@ -126,6 +126,9 @@ function onLoad() {
     const profileButtonEl = document.getElementById('list-logo');
     profileButtonEl.addEventListener('click', onUserInfoLoad);
 
+    const modiButton = document.getElementById('task-modifier-submit');
+    modiButton.addEventListener('click',()=>{sendTaskModify(activeTask)})
+
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
     submitTaskButtonEl.addEventListener('click', taskCreatedAlert);
