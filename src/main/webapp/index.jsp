@@ -160,7 +160,7 @@
         </table>
         <br>
         <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
-            <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Bin" style="width: 120px;">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/recycle-bin-1-461646.png" alt="Bin" style="width: 120px;">
         </div>
     </div>
     <div id="task-parameters" class="content hidden">
@@ -179,7 +179,7 @@
         <input type="text" name="task-modifier-title" required><br>
         <div id="task-modifier-text" class="form-group shadow-textarea"><br>
             <label for="exampleFormControlTextarea6"><b>Text</b></label>
-            <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
+            <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" required></textarea><br>
             <button id="task-modifier-submit">Submit</button>
     </div>
 </div>

@@ -35,31 +35,18 @@ function onTaskLoad() {
     xhr.open('GET', 'createTask');
     xhr.send();
 
-    showContents(['main', 'task-editor', 'task-parameters']);
+    showContents(['main', 'task-editor', 'task-modifier']);
 }
 
-function displayTasks(taskList) {
-    removeAllChildren(taskTableBodyEl);
-    for(let i = 0; i < taskList.length; i++) {
-        const task = taskList[i];
-        const taskTitleEl = document.createElement('td');
-        taskTitleEl.textContent = task.title;
 
-        taskTitleEl.setAttribute('draggable', 'true');          //
-        taskTitleEl.setAttribute('ondragstart', 'drag(event)'); // drag@drop needed attributes
-        taskTitleEl.setAttribute('id', task.title);             //
-
-        const trEl = document.createElement('tr');
-        trEl.appendChild(taskTitleEl);
-        trEl.setAttribute('draggable', 'true');
-        trEl.setAttribute('ondragstart', 'drag(event)');
-
-        taskTableBodyEl.appendChild(trEl);
-    }
-}
 
 function appendTaskToTaskList(task){
     const taskTitleEl = document.createElement('td');
+
+    const modifyIcon = document.createElement('img');
+    modifyIcon.setAttribute('src', "https://cdn0.iconfinder.com/data/icons/basic-line-5/1024/edit-512.png");
+    modifyIcon.setAttribute('height', '25px');
+    modifyIcon.setAttribute('align', 'right');
 
     taskTitleEl.textContent = task.title;
 
@@ -69,6 +56,7 @@ function appendTaskToTaskList(task){
 
     const trEl = document.createElement('tr');
     trEl.appendChild(taskTitleEl);
+    taskTitleEl.appendChild(modifyIcon);
     trEl.setAttribute('draggable', 'true');
     trEl.setAttribute('ondragstart', 'drag(event)');
 
@@ -88,7 +76,7 @@ function onTaskResponse(){
     //clearMessages();
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
-        displayTasks(text);
+        //displayTasks(text);
         appendTasks(text);
     }else {
         onOtherResponse(submitTaskButtonEl, this);
