@@ -61,6 +61,7 @@ function appendTaskToTaskList(task){
     taskTitleEl.appendChild(modifyIcon);
     trEl.setAttribute('draggable', 'true');
     trEl.setAttribute('ondragstart', 'drag(event)');
+    modifyIcon.addEventListener('click', ()=>{onTaskModifyButtonClicked(task)});
 
     taskTableBodyEl.appendChild(trEl);
 }

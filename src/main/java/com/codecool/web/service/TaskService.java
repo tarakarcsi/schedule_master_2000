@@ -9,4 +9,5 @@ import java.util.List;
 public interface TaskService {
         List<Task> findAllTask() throws SQLException, ServiceException;
         void addNewTask(String title, String text);
+        void updateTask(Task task);
 }
