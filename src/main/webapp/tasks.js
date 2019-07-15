@@ -35,7 +35,7 @@ function onTaskLoad() {
     xhr.open('GET', 'createTask');
     xhr.send();
 
-    showContents(['main', 'task-editor', 'task-modifier']);
+    showContents(['main', 'task-editor', 'task-parameters']);
 }
 
 
@@ -47,12 +47,13 @@ function appendTaskToTaskList(task){
     modifyIcon.setAttribute('src', "https://cdn0.iconfinder.com/data/icons/basic-line-5/1024/edit-512.png");
     modifyIcon.setAttribute('height', '25px');
     modifyIcon.setAttribute('align', 'right');
+    modifyIcon.addEventListener('click',()=>{onTaskModifyButtonClicked(task)} );
 
     taskTitleEl.textContent = task.title;
 
     taskTitleEl.setAttribute('draggable', 'true');          //
     taskTitleEl.setAttribute('ondragstart', 'drag(event)'); // drag@drop needed attributes
-    taskTitleEl.setAttribute('id', task.title);             //
+    taskTitleEl.setAttribute('id', task.id);
 
     const trEl = document.createElement('tr');
     trEl.appendChild(taskTitleEl);
@@ -94,4 +95,12 @@ function onCreateTaskResponse(){
 
 function taskCreatedAlert() {
     alert("Task created successfully!");
+}
+
+function onTaskModifyButtonClicked(task) {
+    showContents(['main', 'task-editor', 'task-modifier']);
+    const EltaskTitle = document.getElementById('task-modifier-title');
+    const EltaskContent = document.getElementById('exampleFormControlTextarea');
+    EltaskTitle.setAttribute('value',task.title);
+    EltaskContent.value = task.content;
 }

@@ -18,4 +18,5 @@ function onLogoutButtonClicked(event) {
 
 function onLogoutLoad() {
     showContents(['container']);
+
 }
