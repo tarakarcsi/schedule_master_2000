@@ -110,15 +110,19 @@ function onTaskModifyButtonClicked(task) {
 }
 
 
-function sendTaskModify(task) {
+function sendTaskModify() {
+    const EltaskTitle = document.getElementById('task-modifier-title');
+    const EltaskContent = document.getElementById('exampleFormControlTextarea');
+
     const xhr = new XMLHttpRequest();
     const url = new URLSearchParams();
-    url.append('taskId',task.id);
-    url.append('title',task.title);
-    url.append('text',task.text);
+    url.append('taskId',activeTask.id);
+    url.append('title',EltaskTitle.value);
+    url.append('text',EltaskContent.value);
     xhr.addEventListener('error', onNetworkError);
-
+    xhr.addEventListener('load',onTaskLoad);
     xhr.open('POST', 'taskModifier');
     xhr.send(url);
+
 }
 
