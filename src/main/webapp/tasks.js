@@ -35,7 +35,7 @@ function onTaskLoad() {
     xhr.open('GET', 'createTask');
     xhr.send();
 
-    showContents(['main', 'task-editor', 'task-modifier']);
+    showContents(['main', 'task-editor', 'task-parameters']);
 }
 
 
@@ -59,6 +59,7 @@ function appendTaskToTaskList(task){
     taskTitleEl.appendChild(modifyIcon);
     trEl.setAttribute('draggable', 'true');
     trEl.setAttribute('ondragstart', 'drag(event)');
+    modifyIcon.addEventListener()
 
     taskTableBodyEl.appendChild(trEl);
 }
@@ -94,4 +95,9 @@ function onCreateTaskResponse(){
 
 function taskCreatedAlert() {
     alert("Task created successfully!");
+}
+
+function onModifyButtonClicked(task) {
+    showContents(['main', 'task-editor', 'task-modifier']);
+
 }
