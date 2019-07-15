@@ -55,7 +55,7 @@ public class DatabaseTaskDao extends AbstractDao implements TaskDao{
     public void updateTask(Task task) {
         try (PreparedStatement preparedStatement =
              connection.prepareStatement("UPDATE tasks SET title = ?, content = ?" +
-                 "WHERE title = '" + task.getTitle() + "'")) {
+                 "WHERE taskId = '" + task.getId() + "'")) {
             preparedStatement.setString(1, task.getTitle());
             preparedStatement.setString(2, task.getContent());
             executeInsert(preparedStatement);

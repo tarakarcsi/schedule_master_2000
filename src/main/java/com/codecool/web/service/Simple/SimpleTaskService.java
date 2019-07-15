@@ -25,6 +25,11 @@ public class SimpleTaskService implements TaskService {
     }
 
     @Override
+    public void updateTask(Task task) {
+        taskDao.updateTask(task);
+    }
+
+    @Override
     public void addNewTask(String title, String text) {
         taskDao.addNewTask(title, text);
     }
