@@ -183,6 +183,14 @@
             <button id="task-modifier-submit">Submit</button>
         </div>
     </div>
+    <div id="view-schedule" class="content hidden">
+         <div id="view-schedule-schedules">
+         </div>
+        <div id="view-schedule-tasks">
+        </div>
+        <div  id="view-schedule-table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

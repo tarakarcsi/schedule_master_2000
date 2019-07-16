@@ -123,6 +123,5 @@ function sendTaskModify() {
     xhr.addEventListener('load',onTaskLoad);
     xhr.open('POST', 'taskModifier');
     xhr.send(url);
-
 }
 
