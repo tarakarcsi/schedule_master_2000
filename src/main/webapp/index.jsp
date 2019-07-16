@@ -30,7 +30,6 @@
 </head>
 <body>
 
-
 <div class="container content" id="container">
     <div class="login" id="loginDiv">
         <div class="row">
@@ -188,9 +187,10 @@
          </div>
         <div id="view-schedule-tasks">
         </div>
-        <div  id="view-schedule-table>
+        <div id="view-schedule-table">
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
