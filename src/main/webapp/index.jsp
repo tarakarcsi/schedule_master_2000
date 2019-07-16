@@ -13,6 +13,7 @@
     <c:url value="/schedules.js" var="schedulesScriptUrl"/>
     <c:url value="/profile.js" var="profileScriptUrl"/>
     <c:url value="/tasks.js" var="tasksScriptUrl"/>
+    <c:url value="/viewSchedule.js" var="viewScheduleScriptUrl"/>
     <link rel="stylesheet" type="text/css" href="${styleUrl}">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,6 +27,7 @@
     <script src="${UserPopupUrl}"></script>
     <script src="${schedulesScriptUrl}"></script>
     <script src="${tasksScriptUrl}"></script>
+    <script src="${viewScheduleScriptUrl}"></script>
     <title>Schedule-Master-9000</title>
 </head>
 <body>
@@ -82,16 +84,16 @@
     </table>
 </div>
 <div class="content hidden" id="main">
-<nav>
-    <ul id="nav-ul">
-        <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
-        <li id="nav-home" class="nav-li">Home</li>
-        <li id="nav-task-editor" class="nav-li">Task Editor</li>
-        <li id="nav-schedule-editor" class="nav-li">Schedule Editor</li>
-        <li id="nav-view-schedule" class="nav-li">View Schedule</li>
-        <li id="nav-logout" class="nav-li">Logout</li>
-    </ul>
-</nav>
+    <nav>
+        <ul id="nav-ul">
+            <img data-modal-target="#modali" id="list-logo" src="https://cdn3.iconfinder.com/data/icons/business-and-finance-icons/512/Business_Man-512.png"/>
+            <li id="nav-home" class="nav-li">Home</li>
+            <li id="nav-task-editor" class="nav-li">Task Editor</li>
+            <li id="nav-schedule-editor" class="nav-li">Schedule Editor</li>
+            <li id="nav-view-schedule" class="nav-li">View Schedule</li>
+            <li id="nav-logout" class="nav-li">Logout</li>
+        </ul>
+    </nav>
     <div id="modali" class="modali" style="display: none;">
         <div class="modal-header">
             <div class="title">Profile</div>
@@ -111,86 +113,95 @@
         </div>
     </div>
 
-<div id="schedule-editor" class="content hidden">
-    <div id="schedule-table">
-        <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
-             <div>
-                <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
-             </div>
-            <tbody>
-            </tbody>
-        </table>
-        <br>
-        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
-            <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Kuka" style="width: 120px;">
-        </div>
-    </div>
-    <div id="schedule-parameters">
-        <h2 id="schedule-h1">Create new schedule</h2>
-        <label id="schedule-label-title" for="schedule-title"><b>Title</b><br></label>
-        <input type="text" name="schedule-title" required><br>
-        <div id="schedule-days"><b>Days</b><br>
-            <select multiple name="days" id="schedule-days-list">
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-                <option value="Sunday">Sunday</option>
-            </select>
-        </div>
-        <select name="published-status" id="published-status">
-            <option value="true">Published</option>
-            <option value="false">Unpublished</option>
-        </select><br>
-        <button id="schedule-submit">Submit</button>
-    </div>
-</div>
-
-<div id="task-editor" class="content hidden">
-    <div id="task-table">
-        <table id="task-table-id"  ondrop="drop(event)" ondragover="allowDrop(event)" >
-            <div>
-                <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Tasks</b></p>
+    <div id="schedule-editor" class="content hidden">
+        <div id="schedule-table">
+            <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div>
+                    <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
+                </div>
+                <tbody>
+                </tbody>
+            </table>
+            <br>
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+                <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Kuka" style="width: 120px;">
             </div>
-            <tbody>
-            </tbody>
-        </table>
-        <br>
-        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
-            <img src="https://cdn.iconscout.com/icon/free/png-512/recycle-bin-1-461646.png" alt="Bin" style="width: 120px;">
+        </div>
+        <div id="schedule-parameters">
+            <h2 id="schedule-h1">Create new schedule</h2>
+            <label id="schedule-label-title" for="schedule-title"><b>Title</b><br></label>
+            <input type="text" name="schedule-title" required><br>
+            <div id="schedule-days"><b>Days</b><br>
+                <select multiple name="days" id="schedule-days-list">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            <select name="published-status" id="published-status">
+                <option value="true">Published</option>
+                <option value="false">Unpublished</option>
+            </select><br>
+            <button id="schedule-submit">Submit</button>
         </div>
     </div>
-    <div id="task-parameters" class="content hidden">
-        <h2 id="task-h1">Create new task</h2>
-        <label id="task-label-title"><b>Title</b></label><br>
-        <input type="text" name="task-title" required><br>
-        <div id="task-text" class="form-group shadow-textarea"><br>
-            <label for="exampleFormControlTextarea6"><b>Text</b></label>
-            <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
-            <button id="task-submit">Submit</button>
+
+    <div id="task-editor" class="content hidden">
+        <div id="task-table">
+            <table id="task-table-id"  ondrop="drop(event)" ondragover="allowDrop(event)" >
+                <div>
+                    <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Tasks</b></p>
+                </div>
+                <tbody>
+                </tbody>
+            </table>
+            <br>
+            <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/recycle-bin-1-461646.png" alt="Bin" style="width: 120px;">
+            </div>
+        </div>
+        <div id="task-parameters" class="content hidden">
+            <h2 id="task-h1">Create new task</h2>
+            <label id="task-label-title"><b>Title</b></label><br>
+            <input type="text" name="task-title" required><br>
+            <div id="task-text" class="form-group shadow-textarea"><br>
+                <label for="exampleFormControlTextarea6"><b>Text</b></label>
+                <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea6" rows="3" cols="10" placeholder="Write something here..." required></textarea><br>
+                <button id="task-submit">Submit</button>
+            </div>
+        </div>
+        <div id="task-modifier" class="content hidden">
+            <h2 id="task-modifier-h1">Modify task</h2>
+            <label id="task-modifier-label-title"><b>Title</b></label><br>
+            <input type="text" id="task-modifier-title" name="task-modifier-title" required><br>
+            <div id="task-modifier-text" class="form-group shadow-textarea"><br>
+                <label for="exampleFormControlTextarea6"><b>Text</b></label>
+                <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea" rows="3" cols="10" required></textarea><br>
+                <button id="task-modifier-submit">Submit</button>
+            </div>
+        </div>
+        <div id="view-schedule" class="content hidden">
+            <div id="view-schedule-schedules" class = "content hidden">
+                <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div>
+                        <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
+                    </div>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div id="view-schedule-tasks">
+            </div>
+            <div  id="view-schedule-table">
+                <div id="view-schedule-table">
+                </div>
+            </div>
         </div>
     </div>
-    <div id="task-modifier" class="content hidden">
-        <h2 id="task-modifier-h1">Modify task</h2>
-        <label id="task-modifier-label-title"><b>Title</b></label><br>
-        <input type="text" id="task-modifier-title" name="task-modifier-title" required><br>
-        <div id="task-modifier-text" class="form-group shadow-textarea"><br>
-            <label for="exampleFormControlTextarea6"><b>Text</b></label>
-            <textarea name="task-textarea" class="form-control z-depth-1 task-textarea" id="exampleFormControlTextarea" rows="3" cols="10" required></textarea><br>
-            <button id="task-modifier-submit">Submit</button>
-        </div>
-    </div>
-    <div id="view-schedule" class="content hidden">
-         <div id="view-schedule-schedules">
-         </div>
-        <div id="view-schedule-tasks">
-        </div>
-        <div id="view-schedule-table">
-        </div>
-    </div>
-</div>
 </div>
 </body>
 </html>
