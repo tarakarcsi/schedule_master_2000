@@ -129,6 +129,9 @@ function onLoad() {
     const modiButton = document.getElementById('task-modifier-submit');
     modiButton.addEventListener('click',sendTaskModify);
 
+    const viewScheduleButton = document.getElementById('nav-view-schedule');
+    viewScheduleButton.addEventListener('click',onViewScheduleClicked);
+
     submitScheduleButtonEl.addEventListener('click', onCreateButtonClicked);
     submitScheduleButtonEl.addEventListener('click', scheduleCreatedAlert);
     submitTaskButtonEl.addEventListener('click', taskCreatedAlert);

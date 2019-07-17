@@ -1,3 +1,3 @@
 function onViewScheduleClicked() {
-    showContents(['main', 'view-schedule', 'view-schedule-schedules']);
+    showContents(['main','view-schedule-schedules']);
 }
