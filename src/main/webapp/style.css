@@ -1,3 +1,9 @@
+#schedule-table2{
+    width: 30%;
+    float: right;
+    margin-top: 6%;
+}
+
 .error {
     color: red;
     text-align:center;
@@ -438,6 +444,8 @@ textarea {
     margin-top: 6%;
     max-height: 613px;
     display: flex;
+    width: 30%;
+    float: left;
 }
 
 .slots {

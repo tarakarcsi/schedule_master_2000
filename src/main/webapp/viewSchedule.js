@@ -60,7 +60,7 @@ function onViewScheduleButtonClicked() {
 
 //-----------------------------------------------------------------------------------
 function onScheduleViewLoad() {
-    scheduleTableEl = document.getElementById('schedule-table-id');
+    scheduleTableEl = document.getElementById('schedule-table-id2');
     scheduleTableBodyEl = scheduleTableEl.querySelector('tbody');
 
     const xhr = new XMLHttpRequest();

@@ -133,7 +133,7 @@
             </table>
             <br>
             <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"
-                 style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+                 <%--style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;"--%>>
                 <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Kuka" style="width: 120px;">
             </div>
         </div>
@@ -202,10 +202,15 @@
         </div>
     </div>
     <div id="view-schedule" class="content hidden">
-        <div id="view-schedule-tasks">
-
-        </div>
-        <div id="view-schedule-table">
+        <div id="view-schedule-tasks"></div>
+        <div id="view-schedule-table"></div>
+        <div id="schedule-table2">
+            <table id="schedule-table-id2">
+                <thead><p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; ">
+                    <b>Schedules</b></p></thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

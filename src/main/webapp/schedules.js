@@ -122,7 +122,9 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data)).style.display = "none";
+    const tmp = document.getElementById(data);
+    tmp.style.display = "none";
+    ev.target.append(tmp);
 }
 
 

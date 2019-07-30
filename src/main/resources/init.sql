@@ -58,7 +58,7 @@ insert into schedules(days, title, isPublished, userId) values('tuesday', 'felad
 insert into schedules(days, title, isPublished, userId) values('sunday', 'programok', false, 3);
 
 insert into tasks(title, content) values('bevásárlás', 'bevásárlólista: ');
-insert into tasks(title, content) values('edzés', 'edzésterv feladatok: ');
+insert into tasks(title, content) values('edzés', 'edzésterv feladatok:  margaritával a kezemben bámulni a többi gyökeret');
 insert into tasks(title, content) values('teregetés', 'ezt sose csináljuk meg');
 insert into tasks(title, content) values('főzés', 'tőtött káposztát');
 insert into tasks(title, content) values('buli', 'inni jöttünk nem bulizni');
