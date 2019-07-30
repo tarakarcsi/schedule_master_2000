@@ -1,4 +1,4 @@
-let mainDivEl;
+let TableViewDivEl;
 let newDivEl;
 
 function createScheduleTable() {
@@ -54,5 +54,69 @@ function timeDiv(divToAppend){
 
 function onViewScheduleButtonClicked() {
     createScheduleTable();
-   showContents(['view-schedule','main']);
+    onScheduleViewLoad();
+    showContents(['view-schedule','main']);
+}
+
+//-----------------------------------------------------------------------------------
+function onScheduleViewLoad() {
+    scheduleTableEl = document.getElementById('schedule-table-id');
+    scheduleTableBodyEl = scheduleTableEl.querySelector('tbody');
+
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', onScheduleViewResponse);
+    xhr.addEventListener('error', onNetworkError);
+
+    xhr.open('GET', 'createSchedule');
+    xhr.send();
+
+    showContents(['main', 'view-schedule']);
+
+    //appendScheduleToScheduleList(schedules); ez nem jó ide
+}
+
+function onScheduleViewResponse(){
+    if (this.status === OK) {
+        const text = JSON.parse(this.responseText);
+        displayViewSchedules(text);
+        appendSchedules(text);
+    }else {
+        onOtherResponse(submitScheduleButtonEl, this);
+    }
+}
+
+function displayViewSchedules(scheduleList) {
+    for(let i = 0; i < scheduleList.length; i++){
+        const schedule = scheduleList[i];
+        const scheduleTitleEl = document.createElement('td');
+        scheduleTitleEl.textContent = schedule.title;
+        scheduleTitleEl.setAttribute('id', schedule.title);         //
+
+        const trEl = document.createElement('tr');
+        trEl.appendChild(scheduleTitleEl);
+
+        scheduleTableBodyEl.appendChild(trEl);
+    }
+}
+
+function appendScheduleViewToScheduleList(schedule)  { // append one schedule to list
+    const scheduleTitleEl = document.createElement('td');
+
+    scheduleTitleEl.textContent = schedule.title;
+    scheduleTitleEl.setAttribute('id', schedule.title);
+
+
+    const trEl = document.createElement('tr');
+    trEl.appendChild(scheduleTitleEl);
+    scheduleTableBodyEl.appendChild(trEl);
+}
+
+function appendSchedules(schedules) { // extending the schedule list
+
+    removeAllChildren(scheduleTableBodyEl);
+
+    for(let i = 0; i < schedules.length; i++) {
+        const schedule = schedules[i];
+        appendScheduleViewToScheduleList(schedule);
+    }
 }
