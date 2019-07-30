@@ -1,42 +1,58 @@
 let mainDivEl;
-
-function onViewScheduleClicked() {
-    showContents(['main','view-schedule-schedules']);
-}
-
-
+let newDivEl;
 
 function createScheduleTable() {
-    const tableEl = document.createElement('table');
-    tableEl.setAttribute('id', 'view-table');
+    const tableEl = document.getElementById('view-schedule-table');
+    const head = document.createElement('div');
+    head.textContent =  "Hours";
+    newDivEl = document.createElement('div');
+    timeDiv(tableEl);
 
-    const tablefirstHeadRowEl = document.createElement('tr');
-    const tablefirstHeadEl = document.createElement('th');
-    tablefirstHeadEl.textContent = "Hours";
 
-    tablefirstHeadRowEl.appendChild(tablefirstHeadEl);
-    const tableHourEl = document.createElement('tr');
+    for(let h = 0; h< 7; h++) {
+        newDivEl = document.createElement('div');
 
-    for(let i = 0; i <= 23; i++) {
+        newDivEl.setAttribute('class', 'column');
 
-        const tableDataEl = document.createElement('td');
-        tableDataEl.textContent = i + '-' + (i+1);
-        tableHourEl.appendChild(tableDataEl);
+        for(let i = 0; i <= 24; i++) {
+
+            let tableDataEl = document.createElement('div');
+            tableDataEl.className = "slots";
+            tableDataEl.setAttribute('id',(h+"|" + i).toString());
+            if(i == 0){
+                tableDataEl.textContent = h+1;
+                newDivEl.appendChild(tableDataEl);
+                tableEl.append(newDivEl);
+            }else{
+                newDivEl.appendChild(tableDataEl);
+                tableEl.append(newDivEl);
+            }
+        }
+
     }
-    tableEl.appendChild(tablefirstHeadRowEl);
-    tableEl.appendChild(tableHourEl);
-    mainDivEl.appendChild(tableEl);
 
 }
 
-// majd ezt holnap  átrakom a mainbe
+function timeDiv(divToAppend){
 
-//function onLoad() {
-//    mainDivEl = document.getElementById('view-schedule-table');
-//
-//    const clickButton = document.getElementById('norm-button');
-//    clickButton.addEventListener('click', createScheduleTable);
-//
-//}
-//
-//document.addEventListener('DOMContentLoaded', onLoad);
+    for(let i = 0; i <= 24; i++) {
+
+        const tableDataEl = document.createElement('div');
+        tableDataEl.className = "time";
+        if(i == 0 ){
+            tableDataEl.textContent = " ";
+
+        }else{
+            tableDataEl.textContent = i + '-' + (i+1);
+        }
+        newDivEl.appendChild(tableDataEl);
+        divToAppend.append(newDivEl);
+    }
+}
+
+
+
+function onViewScheduleButtonClicked() {
+    createScheduleTable();
+   showContents(['view-schedule-table']);
+}
