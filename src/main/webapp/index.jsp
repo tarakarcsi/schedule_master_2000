@@ -184,21 +184,11 @@
                 <button id="task-modifier-submit">Submit</button>
             </div>
         </div>
-        <div id="view-schedule" class="content hidden">
-            <div id="view-schedule-schedules" class ="content hidden">
-                <table id="schedule-table-id-view" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <div>
-                        <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; "><b>Schedules</b></p>
-                    </div>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-            <div id="view-schedule-tasks">
-            </div>
-            <div id="view-schedule-table">
-            </div>
-            </div>
+    </div>
+    <div id="view-schedule" class="content hidden">
+        <div id="view-schedule-tasks">
+        </div>
+        <div id="view-schedule-table">
         </div>
     </div>
 </div>

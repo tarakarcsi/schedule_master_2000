@@ -432,3 +432,34 @@ tr:nth-child(even):hover {
 textarea {
     height: 150px !important;
 }
+#view-schedule-table {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 6%;
+    max-height: 613px;
+    display: flex;
+}
+
+.slots {
+    height: 23px;
+    width: 90px;
+    text-align: center;
+    margin-bottom: 0px;
+    background: coral;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+.time{
+    height: 23px;
+    width: 52px;
+    margin-bottom: 0px;
+    background: coral;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.column {
+    width: auto;
+}
+
+

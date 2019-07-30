@@ -3,6 +3,7 @@ let newDivEl;
 
 function createScheduleTable() {
     const tableEl = document.getElementById('view-schedule-table');
+    removeAllChildren(tableEl);
     const head = document.createElement('div');
     head.textContent =  "Hours";
     newDivEl = document.createElement('div');
@@ -19,7 +20,7 @@ function createScheduleTable() {
             let tableDataEl = document.createElement('div');
             tableDataEl.className = "slots";
             tableDataEl.setAttribute('id',(h+"|" + i).toString());
-            if(i == 0){
+            if(i === 0){
                 tableDataEl.textContent = h+1;
                 newDivEl.appendChild(tableDataEl);
                 tableEl.append(newDivEl);
@@ -28,7 +29,6 @@ function createScheduleTable() {
                 tableEl.append(newDivEl);
             }
         }
-
     }
 
 }
@@ -39,11 +39,11 @@ function timeDiv(divToAppend){
 
         const tableDataEl = document.createElement('div');
         tableDataEl.className = "time";
-        if(i == 0 ){
+        if(i === 0 ){
             tableDataEl.textContent = " ";
 
         }else{
-            tableDataEl.textContent = i + '-' + (i+1);
+            tableDataEl.textContent = i-1 + '-' + (i);
         }
         newDivEl.appendChild(tableDataEl);
         divToAppend.append(newDivEl);
@@ -54,5 +54,5 @@ function timeDiv(divToAppend){
 
 function onViewScheduleButtonClicked() {
     createScheduleTable();
-   showContents(['view-schedule-table']);
+   showContents(['view-schedule','main']);
 }
