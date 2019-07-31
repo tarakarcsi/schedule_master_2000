@@ -26,9 +26,10 @@ function onCreateTaskButtonClicked() {
 }
 
 function onTaskLoad() {
-    if(taskTableBodyEl != null){
-        removeAllChildren(taskTableBodyEl);
-    }
+    // if(taskTableBodyEl !==  null) {
+    //     removeAllChildren(taskTableBodyEl);
+    // }
+    // onTaskViewLoad();
 
     taskTableEl = document.getElementById('task-table-id');
     taskTableBodyEl = taskTableEl.querySelector('tbody');
@@ -83,7 +84,6 @@ function onTaskResponse(){
     //clearMessages();
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
-        //displayTasks(text);
         appendTasks(text);
     }else {
         onOtherResponse(submitTaskButtonEl, this);

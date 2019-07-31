@@ -138,7 +138,7 @@ function onTaskViewLoad() {
     taskTableBodyEl = taskTableEl.querySelector('tbody');
 
     const xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', onTaskResponse);
+    xhr.addEventListener('load', onTaskViewResponse);
     xhr.addEventListener('error', onNetworkError);
 
     xhr.open('GET', 'createTask');
@@ -147,28 +147,27 @@ function onTaskViewLoad() {
     showContents(['main', 'task-parameters']);
 }
 
-function onTaskResponse(){
+function onTaskViewResponse(){
     //clearMessages();
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
-        //displayTasks(text);
-        appendTasks(text);
+          appendViewTasks(text);
     }else {
         onOtherResponse(submitTaskButtonEl, this);
     }
 }
 
-function appendTasks(tasks) {
+function appendViewTasks(tasks) {
     removeAllChildren(taskTableBodyEl);
 
     for(let i = 0; i < tasks.length; i++){
         const task = tasks[i];
-        appendTaskToTaskList(task);
+        appendViewTaskToTaskList(task);
     }
 }
 
 
-function appendTaskToTaskList(task){
+function appendViewTaskToTaskList(task){
     const taskTitleEl = document.createElement('td');
 
     taskTitleEl.textContent = task.title;
