@@ -124,17 +124,17 @@
     <div id="schedule-editor" class="content hidden">
         <div id="schedule-table">
             <table id="schedule-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div>
+                <thead>
                     <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; ">
                         <b>Schedules</b></p>
-                </div>
+                </thead>
                 <tbody>
                 </tbody>
             </table>
             <br>
             <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"
-                 <%--style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;"--%>>
-                <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Kuka" style="width: 120px;">
+                 style="margin: 0 auto; width: 30px; padding: 20px; height: 30px;">
+                <img src="https://unixtitan.net/images/poop-clipart-horse-2.png" alt="Szar" style="width: 120px;">
             </div>
         </div>
         <div id="schedule-parameters">
@@ -163,10 +163,10 @@
     <div id="task-editor" class="content hidden">
         <div id="task-table">
             <table id="task-table-id" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div>
+                <thead>
                     <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; ">
                         <b>Tasks</b></p>
-                </div>
+                </thead>
                 <tbody>
                 </tbody>
             </table>

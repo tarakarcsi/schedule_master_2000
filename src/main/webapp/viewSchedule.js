@@ -10,7 +10,7 @@ function createScheduleTable() {
     timeDiv(tableEl);
 
 
-    for(let h = 0; h< 7; h++) {
+    for(let h = 0; h < 7; h++) {
         newDivEl = document.createElement('div');
 
         newDivEl.setAttribute('class', 'column');
@@ -60,6 +60,10 @@ function onViewScheduleButtonClicked() {
 
 //-----------------------------------------------------------------------------------
 function onScheduleViewLoad() {
+    if(scheduleTableBodyEl != null){
+        removeAllChildren(scheduleTableBodyEl);
+    }
+
     scheduleTableEl = document.getElementById('schedule-table-id2');
     scheduleTableBodyEl = scheduleTableEl.querySelector('tbody');
 
@@ -86,6 +90,8 @@ function onScheduleViewResponse(){
 }
 
 function displayViewSchedules(scheduleList) {
+    /*const removableEl = document.getElementById('schedule-table-id');*/
+
     for(let i = 0; i < scheduleList.length; i++){
         const schedule = scheduleList[i];
         const scheduleTitleEl = document.createElement('td');

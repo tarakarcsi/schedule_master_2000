@@ -41,6 +41,9 @@ function onCreateScheduleResponse(){
     }
 }
 function onScheduleLoad() {
+    if(scheduleTableBodyEl != null){
+        removeAllChildren(scheduleTableBodyEl);
+    }
     scheduleTableEl = document.getElementById('schedule-table-id');
     scheduleTableBodyEl = scheduleTableEl.querySelector('tbody');
 
@@ -60,7 +63,7 @@ function onScheduleResponse(){
     if (this.status === OK) {
         const text = JSON.parse(this.responseText);
         displaySchedules(text);
-        appendSchedules(text);
+        /*appendSchedules(text);*/
     }else {
         onOtherResponse(submitScheduleButtonEl, this);  
     }
@@ -122,9 +125,7 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    const tmp = document.getElementById(data);
-    tmp.style.display = "none";
-    ev.target.append(tmp);
+    ev.target.append(document.getElementById(data).classList.add('hidden'));
 }
 
 
