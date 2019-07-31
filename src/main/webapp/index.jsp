@@ -211,6 +211,15 @@
                 <tbody>
                 </tbody>
             </table>
+        <div id="task-table2">
+            <table id="task-table-id2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <thead>
+                <p style="font-size: 25px; margin-bottom: 0px; padding:20px; background: coral; border: 5px solid black; border-bottom: 0px; ">
+                    <b>Tasks</b></p>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

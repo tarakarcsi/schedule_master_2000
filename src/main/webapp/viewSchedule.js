@@ -1,4 +1,3 @@
-let TableViewDivEl;
 let newDivEl;
 
 function createScheduleTable() {
@@ -125,4 +124,53 @@ function appendSchedules(schedules) { // extending the schedule list
         const schedule = schedules[i];
         appendScheduleViewToScheduleList(schedule);
     }
+}
+
+//----------------------------------------------------------------------
+
+function onTaskLoad() {
+    taskTableEl = document.getElementById('task-table-id2');
+    taskTableBodyEl = taskTableEl.querySelector('tbody');
+
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', onTaskResponse);
+    xhr.addEventListener('error', onNetworkError);
+
+    xhr.open('GET', 'createTask');
+    xhr.send();
+
+    showContents(['main', 'task-parameters']);
+}
+
+function onTaskResponse(){
+    //clearMessages();
+    if (this.status === OK) {
+        const text = JSON.parse(this.responseText);
+        //displayTasks(text);
+        appendTasks(text);
+    }else {
+        onOtherResponse(submitTaskButtonEl, this);
+    }
+}
+
+function appendTasks(tasks) {
+    removeAllChildren(taskTableBodyEl);
+
+    for(let i = 0; i < tasks.length; i++){
+        const task = tasks[i];
+        appendTaskToTaskList(task);
+    }
+}
+
+
+function appendTaskToTaskList(task){
+    const taskTitleEl = document.createElement('td');
+
+    taskTitleEl.textContent = task.title;
+    taskTitleEl.setAttribute('id', task.title);
+
+    const trEl = document.createElement('tr');
+    trEl.appendChild(taskTitleEl);
+
+    taskTableBodyEl.appendChild(trEl);
 }
