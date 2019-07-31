@@ -26,6 +26,10 @@ function onCreateTaskButtonClicked() {
 }
 
 function onTaskLoad() {
+    if(taskTableBodyEl != null){
+        removeAllChildren(taskTableBodyEl);
+    }
+
     taskTableEl = document.getElementById('task-table-id');
     taskTableBodyEl = taskTableEl.querySelector('tbody');
 

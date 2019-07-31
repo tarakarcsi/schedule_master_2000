@@ -54,6 +54,7 @@ function timeDiv(divToAppend){
 function onViewScheduleButtonClicked() {
     createScheduleTable();
     onScheduleViewLoad();
+    onTaskViewLoad();
     showContents(['view-schedule','main']);
 }
 
@@ -128,7 +129,11 @@ function appendSchedules(schedules) { // extending the schedule list
 
 //----------------------------------------------------------------------
 
-function onTaskLoad() {
+function onTaskViewLoad() {
+    if(taskTableBodyEl != null){
+        removeAllChildren(taskTableBodyEl);
+    }
+
     taskTableEl = document.getElementById('task-table-id2');
     taskTableBodyEl = taskTableEl.querySelector('tbody');
 
